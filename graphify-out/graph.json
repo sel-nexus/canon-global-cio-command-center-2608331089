@@ -14,7 +14,7 @@
       "label": "run_migrations_offline()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L15",
+      "source_location": "L16",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -24,7 +24,7 @@
       "label": "run_migrations_online()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L22",
+      "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -39,19 +39,19 @@
       "community": 2
     },
     {
-      "id": "backend_alembic_env_rationale_16",
+      "id": "backend_alembic_env_rationale_17",
       "label": "Render SQL without opening a database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast"
     },
     {
-      "id": "backend_alembic_env_rationale_23",
+      "id": "backend_alembic_env_rationale_24",
       "label": "Apply migrations using a temporary database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast"
     },
     {
@@ -141,6 +141,48 @@
       "file_type": "rationale",
       "source_file": "backend/alembic/versions/002_strategic.py",
       "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_003_regional",
+      "label": "003_regional.py",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_003_regional_upgrade",
+      "label": "upgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_003_regional_downgrade",
+      "label": "downgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L29",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_003_regional_rationale_12",
+      "label": "Create the regional table without seeding metrics.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_003_regional_rationale_30",
+      "label": "Remove the regional table.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L30",
       "_origin": "ast"
     },
     {
@@ -439,7 +481,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L16",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -454,11 +496,45 @@
       "community": 1
     },
     {
-      "id": "backend_app_main_rationale_17",
+      "id": "backend_app_main_rationale_19",
       "label": "Report process liveness independently of database availability.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_regional",
+      "label": "regional.py",
+      "file_type": "code",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_regional_regionalperformance",
+      "label": "RegionalPerformance",
+      "file_type": "code",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_regional_rationale_1",
+      "label": "Persist the latest source-provided regional performance records.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_regional_rationale_12",
+      "label": "Store one current observation per named region.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L12",
       "_origin": "ast"
     },
     {
@@ -746,6 +822,80 @@
       "community": 1
     },
     {
+      "id": "backend_app_routers_regional",
+      "label": "regional.py",
+      "file_type": "code",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_py_get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_regional_radar",
+      "label": "regional_radar()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_py_depends",
+      "label": "Depends",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_regional_performance",
+      "label": "regional_performance()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_rationale_1",
+      "label": "Expose authenticated regional radar and performance data.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_rationale_17",
+      "label": "Return the raw regional values used for the radar comparison.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_regional_rationale_23",
+      "label": "Return the regional status and evidence for investigation.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_routers_strategic",
       "label": "strategic.py",
       "file_type": "code",
@@ -989,6 +1139,66 @@
       "community": 1
     },
     {
+      "id": "backend_app_schemas_regional",
+      "label": "regional.py",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_regional_regionalrecord",
+      "label": "RegionalRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_regional_py_basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_regional_regionalresponse",
+      "label": "RegionalResponse",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L20",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_regional_rationale_1",
+      "label": "Describe source-provided regional metrics.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_regional_rationale_9",
+      "label": "Expose a region's stored scores, status and update time.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_regional_rationale_21",
+      "label": "Return the stored regions, or an empty list when none exist.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_schemas_strategic",
       "label": "strategic.py",
       "file_type": "code",
@@ -1168,6 +1378,47 @@
       "source_location": "L53",
       "_origin": "ast",
       "community": 3
+    },
+    {
+      "id": "backend_app_services_regional",
+      "label": "regional.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_regional_regional_data",
+      "label": "regional_data()",
+      "file_type": "code",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_regional_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_regional_rationale_1",
+      "label": "Read regional performance without calculating missing indicators.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_regional_rationale_10",
+      "label": "Return each persisted region in deterministic alphabetical order.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L10",
+      "_origin": "ast"
     },
     {
       "id": "backend_app_services_strategic",
@@ -1405,6 +1656,142 @@
       "community": 3
     },
     {
+      "id": "backend_tests_test_regional",
+      "label": "test_regional.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_py_fixture",
+      "label": "fixture",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_context",
+      "label": "context()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L22",
+      "_py_fixture": "?",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_context_override",
+      "label": "override()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_login",
+      "label": "login()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L47",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_record",
+      "label": "record()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L55",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_test_auth_empty_and_revocation",
+      "label": "test_auth_empty_and_revocation()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L61",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_test_persisted_values_and_updates",
+      "label": "test_persisted_values_and_updates()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L78",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_test_constraints",
+      "label": "test_constraints()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L102",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_rationale_1",
+      "label": "Verify regional API and constraints against a disposable PostgreSQL database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_rationale_23",
+      "label": "Migrate and reset only a separate explicitly named test database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_rationale_48",
+      "label": "Register and authenticate a real test account.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L48",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_rationale_56",
+      "label": "Build a source observation for persistence tests.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L56",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_rationale_62",
+      "label": "Require live sessions for both endpoints and return empty lists honestly.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L62",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_rationale_79",
+      "label": "Read committed scores, status and timestamp from both API endpoints.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L79",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_regional_rationale_103",
+      "label": "Enforce unique regions, status vocabulary and percentage bounds.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L103",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_strategic",
       "label": "test_strategic.py",
       "file_type": "code",
@@ -1548,6 +1935,14 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0
+    },
+    {
+      "id": "frontend_e2e_regional_spec",
+      "label": "regional.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/regional.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
     },
     {
       "id": "frontend_e2e_strategic_spec",
@@ -1981,7 +2376,7 @@
       "label": "Account()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -1991,7 +2386,7 @@
       "label": "signOut()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2001,7 +2396,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L37",
+      "source_location": "L42",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2142,6 +2537,48 @@
       "community": 0
     },
     {
+      "id": "frontend_src_dashboard_regional",
+      "label": "Regional.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_regional_regional",
+      "label": "Regional()",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_regional_test",
+      "label": "regional.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_regional_test_row",
+      "label": "row",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_regional_test_mount",
+      "label": "mount()",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L13",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_dashboard_strategic",
       "label": "Strategic.jsx",
       "file_type": "code",
@@ -2231,7 +2668,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2241,7 +2678,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2256,22 +2693,22 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_16",
+      "source": "backend_alembic_env_rationale_17",
       "target": "backend_alembic_env_run_migrations_offline",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_23",
+      "source": "backend_alembic_env_rationale_24",
       "target": "backend_alembic_env_run_migrations_online",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2352,6 +2789,46 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/versions/002_strategic.py",
       "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_003_regional",
+      "target": "backend_alembic_versions_003_regional_upgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_003_regional",
+      "target": "backend_alembic_versions_003_regional_downgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_003_regional_rationale_12",
+      "target": "backend_alembic_versions_003_regional_upgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_003_regional_rationale_30",
+      "target": "backend_alembic_versions_003_regional_downgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/003_regional.py",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2696,12 +3173,23 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_main",
+      "target": "backend_app_routers_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_main_health",
       "target": "backend_app_main_py_get",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -2712,7 +3200,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2727,12 +3215,74 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_17",
+      "source": "backend_app_main_rationale_19",
       "target": "backend_app_main_health",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional_regionalperformance",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional_rationale_1",
+      "target": "backend_app_models_regional",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional_rationale_12",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3361,6 +3911,210 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_routers_auth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_schemas_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_services_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_radar",
+      "target": "backend_app_routers_regional_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_routers_regional_regional_radar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_radar",
+      "target": "backend_app_routers_regional_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_radar",
+      "target": "backend_app_routers_regional_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_radar",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_radar",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_routers_regional_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_routers_regional_regional_performance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_routers_regional_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_routers_regional_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_rationale_1",
+      "target": "backend_app_routers_regional",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_rationale_17",
+      "target": "backend_app_routers_regional_regional_radar",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_rationale_23",
+      "target": "backend_app_routers_regional_regional_performance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_strategic",
       "target": "backend_app_core_database",
       "relation": "imports_from",
@@ -3757,6 +4511,87 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_schemas_regional",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_regional",
+      "target": "backend_app_schemas_regional_regionalrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_regional_regionalrecord",
+      "target": "backend_app_schemas_regional_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_regional",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_regional_regionalresponse",
+      "target": "backend_app_schemas_regional_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_regional_rationale_1",
+      "target": "backend_app_schemas_regional",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_regional_rationale_9",
+      "target": "backend_app_schemas_regional_regionalrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_regional_rationale_21",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/regional.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_schemas_strategic",
       "target": "datetime",
       "relation": "imports",
@@ -4108,6 +4943,80 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/auth.py",
       "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional",
+      "target": "backend_app_models_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional",
+      "target": "backend_app_schemas_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional",
+      "target": "backend_app_services_regional_regional_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional_regional_data",
+      "target": "backend_app_services_regional_py_session",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional_regional_data",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional_rationale_1",
+      "target": "backend_app_services_regional",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional_rationale_10",
+      "target": "backend_app_services_regional_regional_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4500,6 +5409,268 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_core_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_models_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_services_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_context",
+      "target": "backend_tests_test_regional_py_fixture",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_tests_test_regional_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_context",
+      "target": "backend_tests_test_regional_context_override",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_tests_test_regional_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_tests_test_regional_record",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_tests_test_regional_test_auth_empty_and_revocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_tests_test_regional_test_persisted_values_and_updates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_tests_test_regional_test_constraints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_context",
+      "target": "backend_tests_test_regional_context_override",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_test_auth_empty_and_revocation",
+      "target": "backend_tests_test_regional_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_test_persisted_values_and_updates",
+      "target": "backend_tests_test_regional_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_test_persisted_values_and_updates",
+      "target": "backend_tests_test_regional_record",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_test_constraints",
+      "target": "backend_tests_test_regional_record",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_rationale_1",
+      "target": "backend_tests_test_regional",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_rationale_23",
+      "target": "backend_tests_test_regional_context",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_rationale_48",
+      "target": "backend_tests_test_regional_login",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_rationale_56",
+      "target": "backend_tests_test_regional_record",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_rationale_62",
+      "target": "backend_tests_test_regional_test_auth_empty_and_revocation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_rationale_79",
+      "target": "backend_tests_test_regional_test_persisted_values_and_updates",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_rationale_103",
+      "target": "backend_tests_test_regional_test_constraints",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_strategic",
       "target": "datetime",
       "relation": "imports",
@@ -4757,6 +5928,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/auth.spec.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_regional_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/regional.spec.js",
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast"
@@ -5329,11 +6511,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_account",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5343,7 +6536,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5353,7 +6546,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L37",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5364,7 +6557,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L49",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5735,6 +6928,212 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_dashboard_regional",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional",
+      "target": "ref_react_router_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional",
+      "target": "ref_chart_js",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional",
+      "target": "ref_react_chartjs_2",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional",
+      "target": "frontend_src_dashboard_regional_regional",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Regional.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "ref_testing_library_jest_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "ref_react_router_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "frontend_src_dashboard_regional",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "frontend_src_dashboard_regional_test_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "frontend_src_dashboard_regional_test_mount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "frontend_src_dashboard_regional_test_mount",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_dashboard_strategic",
       "target": "ref_react",
       "relation": "imports_from",
@@ -6007,6 +7406,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_regional_regional",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_auth_auth_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -6014,6 +7424,17 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/auth/auth.test.jsx",
       "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_regional_test",
+      "target": "frontend_src_dashboard_regional_regional",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6047,6 +7468,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
       "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional",
+      "target": "backend_app_core_database_base",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6145,6 +7577,50 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/routers/auth.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_routers_auth_current_session",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional",
+      "target": "backend_app_services_regional_regional_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
@@ -6271,6 +7747,39 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_regional",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional",
+      "target": "backend_app_schemas_regional_regionalrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_strategic",
       "target": "backend_app_models_strategic_strategicbudget",
       "relation": "imports",
@@ -6381,6 +7890,39 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional",
+      "target": "backend_app_services_regional_regional_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_strategic",
       "target": "backend_app_core_database_get_db",
       "relation": "imports",
@@ -6447,6 +7989,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_alembic_env",
+      "target": "backend_app_models_regional",
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/env.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_auth",
       "target": "backend_app_services_auth",
       "relation": "imports_from",
@@ -6475,7 +8028,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6568,6 +8121,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_regional_regional_data",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_strategic_dashboard",
       "target": "backend_app_schemas_strategic_strategicdashboard",
       "relation": "calls",
@@ -6597,6 +8161,28 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth.py",
       "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_record",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_test_auth_empty_and_revocation",
+      "target": "backend_app_services_regional_regional_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6664,6 +8250,17 @@
       "source_file": "backend/tests/test_strategic.py",
       "source_location": "L130",
       "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_regional_regionalperformance",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/regional.py",
+      "source_location": "L11",
+      "weight": 0.8,
       "_origin": "ast"
     },
     {
@@ -6832,6 +8429,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_regional_regional_radar",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_strategic_strategic_metrics",
       "target": "backend_app_schemas_strategic_strategicdashboard",
       "relation": "uses",
@@ -6916,6 +8535,39 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/services/auth.py",
       "source_location": "L15",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional_regional_data",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional_regional_data",
+      "target": "backend_app_schemas_regional_regionalrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L12",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_regional_regional_data",
+      "target": "backend_app_schemas_regional_regionalresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/regional.py",
+      "source_location": "L9",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -7019,6 +8671,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_regional_record",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L57",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_regional_test_persisted_values_and_updates",
+      "target": "backend_app_models_regional_regionalperformance",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L96",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_strategic_test_authenticated_persistence_and_exports",
       "target": "backend_app_models_strategic_strategicbudget",
       "relation": "uses",
@@ -7074,6 +8748,42 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_regional_regional_radar",
+      "target": "backend_app_services_regional_regional_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_services_regional_regional_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_account",
+      "target": "frontend_src_dashboard_regional_regional",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_app_account",
       "target": "frontend_src_dashboard_strategic_strategic",
       "relation": "calls",
@@ -7081,7 +8791,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L31",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7093,7 +8803,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7105,7 +8815,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7117,7 +8827,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L47",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7129,7 +8839,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L48",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7146,6 +8856,70 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_dashboard_regional_test_mount",
+      "target": "frontend_src_dashboard_regional_regional",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/dashboard/regional.test.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_strategic_export_strategic",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/strategic.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_strategic_export_strategic",
+      "_tgt": "backend_app_core_database_get_db"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_strategic_strategic_metrics",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/strategic.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_strategic_strategic_metrics",
+      "_tgt": "backend_app_core_database_get_db"
+    },
+    {
+      "source": "datetime",
+      "target": "backend_app_core_security_expiry",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/core/security.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_core_security_expiry",
+      "_tgt": "datetime"
+    },
+    {
+      "source": "backend_app_main_py_get",
+      "target": "backend_app_main_health",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_main_health",
+      "_tgt": "backend_app_main_py_get"
+    },
+    {
       "source": "backend_app_routers_auth_current_session",
       "target": "backend_app_routers_auth_logout",
       "relation": "references",
@@ -7156,8 +8930,8 @@
       "source_file": "backend/app/routers/auth.py",
       "source_location": "L45",
       "weight": 1.0,
-      "_src": "backend_app_routers_auth_logout",
-      "_tgt": "backend_app_routers_auth_current_session"
+      "_src": "backend_app_routers_auth_current_session",
+      "_tgt": "backend_app_routers_auth_logout"
     },
     {
       "source": "backend_app_routers_auth_current_session",
@@ -7170,15 +8944,288 @@
       "source_file": "backend/app/routers/auth.py",
       "source_location": "L39",
       "weight": 1.0,
+      "_src": "backend_app_routers_auth_current_session",
+      "_tgt": "backend_app_routers_auth_me"
+    },
+    {
+      "source": "db",
+      "target": "backend_app_routers_auth_login",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_login",
+      "_tgt": "db"
+    },
+    {
+      "source": "db",
+      "target": "backend_app_routers_auth_logout",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_logout",
+      "_tgt": "db"
+    },
+    {
+      "source": "db",
+      "target": "backend_app_routers_auth_register",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_register",
+      "_tgt": "db"
+    },
+    {
+      "source": "backend_app_routers_auth_py_depends",
+      "target": "backend_app_routers_auth_logout",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_logout",
+      "_tgt": "backend_app_routers_auth_py_depends"
+    },
+    {
+      "source": "backend_app_routers_auth_py_depends",
+      "target": "backend_app_routers_auth_me",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
       "_src": "backend_app_routers_auth_me",
-      "_tgt": "backend_app_routers_auth_current_session"
+      "_tgt": "backend_app_routers_auth_py_depends"
+    },
+    {
+      "source": "post",
+      "target": "backend_app_routers_auth_login",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_login",
+      "_tgt": "post"
+    },
+    {
+      "source": "post",
+      "target": "backend_app_routers_auth_logout",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_logout",
+      "_tgt": "post"
+    },
+    {
+      "source": "post",
+      "target": "backend_app_routers_auth_register",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_register",
+      "_tgt": "post"
+    },
+    {
+      "source": "backend_app_routers_auth_py_get",
+      "target": "backend_app_routers_auth_me",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/auth.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_auth_me",
+      "_tgt": "backend_app_routers_auth_py_get"
+    },
+    {
+      "source": "backend_app_routers_strategic_py_get",
+      "target": "backend_app_routers_strategic_export_strategic",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/strategic.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_strategic_export_strategic",
+      "_tgt": "backend_app_routers_strategic_py_get"
+    },
+    {
+      "source": "backend_app_routers_strategic_py_get",
+      "target": "backend_app_routers_strategic_strategic_metrics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/strategic.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_strategic_strategic_metrics",
+      "_tgt": "backend_app_routers_strategic_py_get"
+    },
+    {
+      "source": "backend_app_routers_strategic_py_session",
+      "target": "backend_app_routers_strategic_export_strategic",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/strategic.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_strategic_export_strategic",
+      "_tgt": "backend_app_routers_strategic_py_session"
+    },
+    {
+      "source": "backend_app_routers_strategic_py_depends",
+      "target": "backend_app_routers_strategic_export_strategic",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/strategic.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_strategic_export_strategic",
+      "_tgt": "backend_app_routers_strategic_py_depends"
+    },
+    {
+      "source": "field_validator",
+      "target": "backend_app_schemas_auth_registration_limit_password_bytes",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/auth.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_schemas_auth_registration_limit_password_bytes",
+      "_tgt": "field_validator"
+    },
+    {
+      "source": "field_validator",
+      "target": "backend_app_schemas_auth_registration_normalize_email",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/auth.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_schemas_auth_registration_normalize_email",
+      "_tgt": "field_validator"
+    },
+    {
+      "source": "backend_app_services_auth_py_session",
+      "target": "backend_app_services_auth_authenticate",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/auth.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_auth_authenticate",
+      "_tgt": "backend_app_services_auth_py_session"
+    },
+    {
+      "source": "backend_app_services_auth_py_session",
+      "target": "backend_app_services_auth_login",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/auth.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_auth_login",
+      "_tgt": "backend_app_services_auth_py_session"
+    },
+    {
+      "source": "backend_app_services_auth_py_session",
+      "target": "backend_app_services_auth_logout",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/auth.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_auth_logout",
+      "_tgt": "backend_app_services_auth_py_session"
+    },
+    {
+      "source": "backend_tests_test_auth_py_fixture",
+      "target": "backend_tests_test_auth_client",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_auth_client",
+      "_tgt": "backend_tests_test_auth_py_fixture"
+    },
+    {
+      "source": "parametrize",
+      "target": "backend_tests_test_auth_test_registration_validation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_auth.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_auth_test_registration_validation",
+      "_tgt": "parametrize"
+    },
+    {
+      "source": "backend_tests_test_strategic_py_fixture",
+      "target": "backend_tests_test_strategic_context",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_strategic.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_strategic_context",
+      "_tgt": "backend_tests_test_strategic_py_fixture"
     }
   ],
   "metadata": {
-    "built_at": "2026-11-18T08:56:46.606758+00:00",
+    "built_at": "2026-11-18T09:03:06.370262+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000418112608331089\\developer",
     "force": true,
-    "files_scanned": 32
+    "files_scanned": 41
   }
 }

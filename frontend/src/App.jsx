@@ -5,6 +5,7 @@ import Login from './auth/Login';
 import Register from './auth/Register';
 import Strategic from './dashboard/Strategic';
 import Regional from './dashboard/Regional';
+import Business from './dashboard/Business';
 
 /** Show the verified account and revoke its session on request. */
 function Account() {
@@ -30,10 +31,11 @@ function Account() {
       {error && <p role="alert" className="error">{error}</p>}
       <button type="button" disabled={pending} onClick={signOut}>{pending ? 'Signing out…' : 'Sign out'}</button>
       <nav aria-label="Dashboard" className="dashboard-nav">
-        <Link to="/dashboard/strategic" aria-current={location.pathname !== '/dashboard/executive-summary' ? 'page' : undefined}>Strategic Command</Link>
+        <Link to="/dashboard/strategic" aria-current={['/account', '/dashboard/strategic'].includes(location.pathname) ? 'page' : undefined}>Strategic Command</Link>
         <Link to="/dashboard/executive-summary" aria-current={location.pathname === '/dashboard/executive-summary' ? 'page' : undefined}>Executive Summary</Link>
+        <Link to="/dashboard/business" aria-current={location.pathname === '/dashboard/business' ? 'page' : undefined}>Business Impact</Link>
       </nav>
-      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : <Strategic />}
+      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : <Strategic />}
     </section>
   );
 }
@@ -54,6 +56,7 @@ export default function App() {
             <Route path="/account" element={<Account />} />
             <Route path="/dashboard/strategic" element={<Account />} />
             <Route path="/dashboard/executive-summary" element={<Account />} />
+            <Route path="/dashboard/business" element={<Account />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </main>

@@ -1,6 +1,6 @@
-# Canon Global CIO Command Center — identity, strategic and regional slices
+# Canon Global CIO Command Center — identity, strategic, regional and business slices
 
-This repository currently implements account registration, login, verified profile restoration, logout, Strategic Command and Executive Summary regional comparison. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
+This repository currently implements account registration, login, verified profile restoration, logout, Strategic Command, Executive Summary regional comparison and Business Impact. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
 
 ## Local development
 
@@ -28,6 +28,12 @@ Run `alembic upgrade head` before serving the strategic API. No business data is
 Apply migrations with `alembic upgrade head`. No regional records are seeded. A data owner must load one current row per region into `regional_performance`, including `region`, `health_score`, `availability_pct`, `security_score`, `transformation_index`, and status (`Excellent`, `Good`, `Warning`, or `Critical`). Availability must be between 0 and 100. Set `updated_at` when importing updates; ORM updates set it automatically. The application does not calculate severity, score definitions, causes, or global totals. Both authenticated `/api/v1/metrics/regional-radar` and `/api/v1/metrics/regional-performance` return `{ "regions": [...] }` with the same source values and timestamps; missing records yield an empty array. The radar plots raw values together without asserting that their scales are comparable. Investigation exposes the stored evidence for Warning and Critical rows, not inferred causes or actions.
 
 Run regional backend tests with `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_regional.py` in `backend`. They migrate and truncate regional records, users and sessions in the disposable test database; never use valuable data or run tests concurrently against the same database. The regional browser journey requires a separate disposable running app database containing a source-provided Warning region, and creates a real test user.
+
+## Business impact data
+
+Apply `alembic upgrade head`; no business observations are seeded. An authorized data owner may load `business_quarters` with one row per year and quarter (1–4). Supply `investment_m`, `revenue_attribution_m`, `cost_avoidance_m`, `operational_cost_savings_m` in USD millions, and `transformation_roi_pct` in percentage points as independently verified values; each may be NULL when unavailable. Specify `updated_at` when importing updates. Definitions, fiscal-quarter conventions and ingestion remain stakeholder decisions. ROI is not calculated; cost avoidance and operational savings are not assumed to be identical. The cards show values from the newest stored quarter, even when a field is missing. The stacked chart is a comparison, not a meaningful combined total.
+
+Authenticated `GET /api/v1/business/impact?limit=20` returns the latest periods in chronological order, with `total`; limit is bounded from 1 to 100. Missing data returns an empty array, missing fields remain null. Run business backend tests with `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_business.py` in `backend`. Tests migrate and truncate business observations, users and sessions in a disposable test database; do not run concurrently or against valuable data. The business browser journey requires a separate disposable running app database containing a business quarter and creates a test user.
 
 ## API and security
 

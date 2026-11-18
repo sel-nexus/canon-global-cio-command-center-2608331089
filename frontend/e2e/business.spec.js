@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('executive sees persisted business impact values', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+  const username = `business${Date.now()}${Math.floor(Math.random() * 10000)}`;
+  await page.goto('/register');
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Email').fill(`${username}@example.com`);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Create account' }).click();
+  await expect(page.getByRole('status')).toContainText('Account created');
+  await page.getByRole('link', { name: 'Sign in' }).click();
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  const responsePromise = page.waitForResponse((response) => response.url().includes('/business/impact') && response.status() === 200);
+  await page.getByRole('link', { name: 'Business Impact' }).click();
+  const data = await (await responsePromise).json();
+  expect(data.quarters.length, 'A persisted business quarter is required for this journey').toBeGreaterThan(0);
+  const latest = data.quarters[data.quarters.length - 1];
+  await expect(page.getByRole('heading', { name: 'Business Impact' })).toBeVisible();
+  await expect(page.getByRole('img', { name: 'Quarterly business impact comparison' })).toBeVisible();
+  const row = page.getByRole('row', { name: new RegExp(`Q${latest.quarter} ${latest.year}`) });
+  await expect(row).toContainText(latest.investment_m ?? 'Not provided');
+  await expect(row).toContainText(latest.revenue_attribution_m ?? 'Not provided');
+  await expect(row).toContainText(latest.cost_avoidance_m ?? 'Not provided');
+  await expect(page.getByText(`Value cards: Q${latest.quarter} ${latest.year}`, { exact: false })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Business Impact' })).toBeVisible();
+  expect(errors).toEqual([]);
+});
