@@ -1,0 +1,35 @@
+import { test, expect } from '@playwright/test';
+
+test('executive sees persisted incidents and operations history', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+  const username = `operations${Date.now()}${Math.floor(Math.random() * 10000)}`;
+  await page.goto('/register');
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Email').fill(`${username}@example.com`);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Create account' }).click();
+  await expect(page.getByRole('status')).toContainText('Account created');
+  await page.getByRole('link', { name: 'Sign in' }).click();
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  const summaryResponse = page.waitForResponse((response) => response.url().includes('/operations/summary') && response.status() === 200);
+  const incidentsResponse = page.waitForResponse((response) => response.url().includes('/operations/incidents') && response.status() === 200);
+  await page.getByRole('link', { name: 'Operations' }).click();
+  const summary = await (await summaryResponse).json();
+  const incidents = await (await incidentsResponse).json();
+  expect(summary.history.length, 'A persisted history row is required').toBeGreaterThan(0);
+  expect(incidents.incidents.length, 'A persisted incident is required').toBeGreaterThan(0);
+  await expect(page.getByRole('heading', { name: 'Operations' })).toBeVisible();
+  await expect(page.getByRole('img', { name: 'Incident volume and resolution history' })).toBeVisible();
+  const latest = summary.history.at(-1);
+  const row = page.getByRole('row', { name: new RegExp(latest.recorded_date) });
+  await expect(row).toContainText(String(latest.incident_volume ?? 'Not provided'));
+  await expect(row).toContainText(String(latest.resolution_count ?? 'Not provided'));
+  await expect(page.getByRole('row', { name: new RegExp(incidents.incidents[0].incident_number) })).toContainText(incidents.incidents[0].title);
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Operations' })).toBeVisible();
+  expect(errors).toEqual([]);
+});

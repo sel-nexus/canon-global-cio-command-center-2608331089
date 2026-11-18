@@ -14,7 +14,7 @@
       "label": "run_migrations_offline()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L16",
+      "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -24,7 +24,7 @@
       "label": "run_migrations_online()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -39,19 +39,19 @@
       "community": 2
     },
     {
-      "id": "backend_alembic_env_rationale_17",
+      "id": "backend_alembic_env_rationale_18",
       "label": "Render SQL without opening a database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast"
     },
     {
-      "id": "backend_alembic_env_rationale_24",
+      "id": "backend_alembic_env_rationale_25",
       "label": "Apply migrations using a temporary database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
@@ -183,6 +183,48 @@
       "file_type": "rationale",
       "source_file": "backend/alembic/versions/003_regional.py",
       "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_004_business",
+      "label": "004_business.py",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_004_business_upgrade",
+      "label": "upgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_004_business_downgrade",
+      "label": "downgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_004_business_rationale_12",
+      "label": "Create independent, nullable source measures for each quarter.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_004_business_rationale_31",
+      "label": "Remove business impact observations.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L31",
       "_origin": "ast"
     },
     {
@@ -481,7 +523,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L18",
+      "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -496,11 +538,45 @@
       "community": 1
     },
     {
-      "id": "backend_app_main_rationale_19",
+      "id": "backend_app_main_rationale_21",
       "label": "Report process liveness independently of database availability.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L19",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_business",
+      "label": "business.py",
+      "file_type": "code",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_business_businessquarter",
+      "label": "BusinessQuarter",
+      "file_type": "code",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_business_rationale_1",
+      "label": "Persist source-provided quarterly business impact observations.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_business_rationale_12",
+      "label": "Store independent financial measures for one reporting quarter.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L12",
       "_origin": "ast"
     },
     {
@@ -822,6 +898,87 @@
       "community": 1
     },
     {
+      "id": "backend_app_routers_business",
+      "label": "business.py",
+      "file_type": "code",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_business_py_get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_business_impact",
+      "label": "impact()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_business_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_business_py_depends",
+      "label": "Depends",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_business_py_query",
+      "label": "Query",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "ge",
+      "label": "ge",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "le",
+      "label": "le",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_business_rationale_1",
+      "label": "Expose authenticated source-supplied business impact observations.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_business_rationale_17",
+      "label": "Return recent source observations, preserving unavailable values.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_routers_regional",
       "label": "regional.py",
       "file_type": "code",
@@ -946,7 +1103,7 @@
       "_origin": "ast"
     },
     {
-      "id": "query",
+      "id": "backend_app_routers_strategic_py_query",
       "label": "Query",
       "file_type": "code",
       "source_file": "",
@@ -1137,6 +1294,66 @@
       "source_location": "L46",
       "_origin": "ast",
       "community": 1
+    },
+    {
+      "id": "backend_app_schemas_business",
+      "label": "business.py",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_business_businessrecord",
+      "label": "BusinessRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_business_py_basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_business_businessresponse",
+      "label": "BusinessResponse",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L21",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_business_rationale_1",
+      "label": "Describe source-supplied quarterly financial values.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_business_rationale_9",
+      "label": "Expose independently reported measures without inferred values.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_business_rationale_22",
+      "label": "Return the newest bounded reporting periods and total available count.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L22",
+      "_origin": "ast"
     },
     {
       "id": "backend_app_schemas_regional",
@@ -1378,6 +1595,47 @@
       "source_location": "L53",
       "_origin": "ast",
       "community": 3
+    },
+    {
+      "id": "backend_app_services_business",
+      "label": "business.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_business_business_data",
+      "label": "business_data()",
+      "file_type": "code",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_business_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_business_rationale_1",
+      "label": "Read quarterly business impact without deriving financial measures.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_business_rationale_10",
+      "label": "Return the newest periods in chronological order and their total count.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L10",
+      "_origin": "ast"
     },
     {
       "id": "backend_app_services_regional",
@@ -1654,6 +1912,125 @@
       "source_location": "L119",
       "_origin": "ast",
       "community": 3
+    },
+    {
+      "id": "backend_tests_test_business",
+      "label": "test_business.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_py_fixture",
+      "label": "fixture",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_context",
+      "label": "context()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L22",
+      "_py_fixture": "?",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_context_override",
+      "label": "override()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_login",
+      "label": "login()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L47",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_test_auth_empty_and_revocation",
+      "label": "test_auth_empty_and_revocation()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L55",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_test_values_order_nulls_updates_and_limit",
+      "label": "test_values_order_nulls_updates_and_limit()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L69",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_test_quarter_constraints",
+      "label": "test_quarter_constraints()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L102",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_rationale_1",
+      "label": "Exercise business impact against a disposable PostgreSQL database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_rationale_23",
+      "label": "Migrate and reset the explicitly selected test database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_rationale_48",
+      "label": "Register and authenticate a test user.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L48",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_rationale_56",
+      "label": "Reject unauthenticated and revoked sessions and return an honest empty result.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L56",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_rationale_70",
+      "label": "Return committed values and preserve missing measures without calculation.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L70",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_business_rationale_103",
+      "label": "Enforce valid calendar keys and reject duplicate observations.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L103",
+      "_origin": "ast"
     },
     {
       "id": "backend_tests_test_regional",
@@ -1935,6 +2312,14 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0
+    },
+    {
+      "id": "frontend_e2e_business_spec",
+      "label": "business.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
     },
     {
       "id": "frontend_e2e_regional_spec",
@@ -2376,7 +2761,7 @@
       "label": "Account()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2386,7 +2771,7 @@
       "label": "signOut()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2396,7 +2781,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L42",
+      "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2537,6 +2922,39 @@
       "community": 0
     },
     {
+      "id": "frontend_src_dashboard_business",
+      "label": "Business.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_business_business",
+      "label": "Business()",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_business_test",
+      "label": "business.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_business_test_row",
+      "label": "row",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_dashboard_regional",
       "label": "Regional.jsx",
       "file_type": "code",
@@ -2668,7 +3086,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2678,7 +3096,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2693,22 +3111,22 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_17",
+      "source": "backend_alembic_env_rationale_18",
       "target": "backend_alembic_env_run_migrations_offline",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_24",
+      "source": "backend_alembic_env_rationale_25",
       "target": "backend_alembic_env_run_migrations_online",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2829,6 +3247,46 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/versions/003_regional.py",
       "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_004_business",
+      "target": "backend_alembic_versions_004_business_upgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_004_business",
+      "target": "backend_alembic_versions_004_business_downgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_004_business_rationale_12",
+      "target": "backend_alembic_versions_004_business_upgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_004_business_rationale_31",
+      "target": "backend_alembic_versions_004_business_downgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/004_business.py",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3184,12 +3642,23 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_main",
+      "target": "backend_app_routers_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_main_health",
       "target": "backend_app_main_py_get",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -3200,7 +3669,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3215,12 +3684,74 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_19",
+      "source": "backend_app_main_rationale_21",
       "target": "backend_app_main_health",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L19",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business_businessquarter",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business_rationale_1",
+      "target": "backend_app_models_business",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business_rationale_12",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3911,6 +4442,168 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_routers_auth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_schemas_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_services_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_routers_business_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_routers_business_impact",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_routers_business_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_routers_business_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_routers_business_py_query",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "ge",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "le",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_rationale_1",
+      "target": "backend_app_routers_business",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business_rationale_17",
+      "target": "backend_app_routers_business_impact",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_regional",
       "target": "backend_app_core_database",
       "relation": "imports_from",
@@ -4268,7 +4961,7 @@
     },
     {
       "source": "backend_app_routers_strategic_export_strategic",
-      "target": "query",
+      "target": "backend_app_routers_strategic_py_query",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
@@ -4507,6 +5200,87 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/schemas/auth.py",
       "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business",
+      "target": "backend_app_schemas_business_businessrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business_businessrecord",
+      "target": "backend_app_schemas_business_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business_businessresponse",
+      "target": "backend_app_schemas_business_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business_rationale_1",
+      "target": "backend_app_schemas_business",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business_rationale_9",
+      "target": "backend_app_schemas_business_businessrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_business_rationale_22",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/business.py",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4943,6 +5717,80 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/auth.py",
       "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business",
+      "target": "backend_app_models_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business",
+      "target": "backend_app_schemas_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business",
+      "target": "backend_app_services_business_business_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business_business_data",
+      "target": "backend_app_services_business_py_session",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business_business_data",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business_rationale_1",
+      "target": "backend_app_services_business",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business_rationale_10",
+      "target": "backend_app_services_business_business_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5405,6 +6253,226 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth.py",
       "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_core_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_models_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_services_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_context",
+      "target": "backend_tests_test_business_py_fixture",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_tests_test_business_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_context",
+      "target": "backend_tests_test_business_context_override",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_tests_test_business_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_tests_test_business_test_auth_empty_and_revocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_tests_test_business_test_values_order_nulls_updates_and_limit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_tests_test_business_test_quarter_constraints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_context",
+      "target": "backend_tests_test_business_context_override",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_test_auth_empty_and_revocation",
+      "target": "backend_tests_test_business_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_test_values_order_nulls_updates_and_limit",
+      "target": "backend_tests_test_business_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_rationale_1",
+      "target": "backend_tests_test_business",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_rationale_23",
+      "target": "backend_tests_test_business_context",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_rationale_48",
+      "target": "backend_tests_test_business_login",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_rationale_56",
+      "target": "backend_tests_test_business_test_auth_empty_and_revocation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_rationale_70",
+      "target": "backend_tests_test_business_test_values_order_nulls_updates_and_limit",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_rationale_103",
+      "target": "backend_tests_test_business_test_quarter_constraints",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5928,6 +6996,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/auth.spec.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_business_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/business.spec.js",
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast"
@@ -6522,11 +7601,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_account",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6536,7 +7626,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6546,7 +7636,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6557,7 +7647,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L54",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6923,6 +8013,169 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/auth/Register.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business",
+      "target": "ref_chart_js",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business",
+      "target": "ref_react_chartjs_2",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business",
+      "target": "frontend_src_dashboard_business_business",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Business.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "ref_testing_library_jest_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "frontend_src_dashboard_business",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "frontend_src_dashboard_business_test_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast"
@@ -7417,12 +8670,34 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_business_business",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_auth_auth_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/auth/auth.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_business_test",
+      "target": "frontend_src_dashboard_business_business",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/business.test.jsx",
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
@@ -7468,6 +8743,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
       "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business",
+      "target": "backend_app_core_database_base",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7577,6 +8863,50 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/routers/auth.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_routers_auth_current_session",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_business",
+      "target": "backend_app_services_business_business_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
@@ -7743,6 +9073,39 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/auth.py",
       "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business",
+      "target": "backend_app_schemas_business_businessrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7890,6 +9253,39 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business",
+      "target": "backend_app_services_business_business_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional",
       "target": "backend_app_core_database_get_db",
       "relation": "imports",
@@ -8000,6 +9396,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_alembic_env",
+      "target": "backend_app_models_business",
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/env.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_auth",
       "target": "backend_app_services_auth",
       "relation": "imports_from",
@@ -8028,7 +9435,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8121,6 +9528,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_business_business_data",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_regional_regional_data",
       "target": "backend_app_schemas_regional_regionalresponse",
       "relation": "calls",
@@ -8161,6 +9579,39 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_auth.py",
       "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_test_auth_empty_and_revocation",
+      "target": "backend_app_services_business_business_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_test_values_order_nulls_updates_and_limit",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_test_quarter_constraints",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8250,6 +9701,17 @@
       "source_file": "backend/tests/test_strategic.py",
       "source_location": "L130",
       "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_business_businessquarter",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/business.py",
+      "source_location": "L11",
+      "weight": 0.8,
       "_origin": "ast"
     },
     {
@@ -8429,6 +9891,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_regional_regional_radar",
       "target": "backend_app_schemas_regional_regionalresponse",
       "relation": "uses",
@@ -8535,6 +10008,39 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/services/auth.py",
       "source_location": "L15",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business_business_data",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business_business_data",
+      "target": "backend_app_schemas_business_businessrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L13",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_business_business_data",
+      "target": "backend_app_schemas_business_businessresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/business.py",
+      "source_location": "L9",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -8671,6 +10177,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_business_test_values_order_nulls_updates_and_limit",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L75",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_business_test_quarter_constraints",
+      "target": "backend_app_models_business_businessquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L106",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional_record",
       "target": "backend_app_models_regional_regionalperformance",
       "relation": "uses",
@@ -8748,6 +10276,18 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_business_impact",
+      "target": "backend_app_services_business_business_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_regional_regional_radar",
       "target": "backend_app_services_regional_regional_data",
       "relation": "calls",
@@ -8779,7 +10319,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L36",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_account",
+      "target": "frontend_src_dashboard_business_business",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8791,7 +10343,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8803,7 +10355,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8815,7 +10367,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8827,7 +10379,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L52",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8839,7 +10391,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8877,8 +10429,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_strategic_export_strategic",
-      "_tgt": "backend_app_core_database_get_db"
+      "_src": "backend_app_core_database_get_db",
+      "_tgt": "backend_app_routers_strategic_export_strategic"
     },
     {
       "source": "backend_app_core_database_get_db",
@@ -8890,7 +10442,33 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_strategic_strategic_metrics",
+      "_src": "backend_app_core_database_get_db",
+      "_tgt": "backend_app_routers_strategic_strategic_metrics"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_regional_regional_performance",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_regional_regional_performance",
+      "_tgt": "backend_app_core_database_get_db"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_regional_regional_radar",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_regional_regional_radar",
       "_tgt": "backend_app_core_database_get_db"
     },
     {
@@ -8912,7 +10490,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -9065,6 +10643,58 @@
       "_tgt": "backend_app_routers_auth_py_get"
     },
     {
+      "source": "backend_app_routers_regional_py_get",
+      "target": "backend_app_routers_regional_regional_performance",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_regional_regional_performance",
+      "_tgt": "backend_app_routers_regional_py_get"
+    },
+    {
+      "source": "backend_app_routers_regional_py_get",
+      "target": "backend_app_routers_regional_regional_radar",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_regional_regional_radar",
+      "_tgt": "backend_app_routers_regional_py_get"
+    },
+    {
+      "source": "backend_app_routers_regional_py_session",
+      "target": "backend_app_routers_regional_regional_performance",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_regional_regional_performance",
+      "_tgt": "backend_app_routers_regional_py_session"
+    },
+    {
+      "source": "backend_app_routers_regional_py_depends",
+      "target": "backend_app_routers_regional_regional_performance",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_regional_regional_performance",
+      "_tgt": "backend_app_routers_regional_py_depends"
+    },
+    {
       "source": "backend_app_routers_strategic_py_get",
       "target": "backend_app_routers_strategic_export_strategic",
       "relation": "references",
@@ -9087,8 +10717,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_routers_strategic_strategic_metrics",
-      "_tgt": "backend_app_routers_strategic_py_get"
+      "_src": "backend_app_routers_strategic_py_get",
+      "_tgt": "backend_app_routers_strategic_strategic_metrics"
     },
     {
       "source": "backend_app_routers_strategic_py_session",
@@ -9208,6 +10838,19 @@
       "_tgt": "parametrize"
     },
     {
+      "source": "backend_tests_test_regional_py_fixture",
+      "target": "backend_tests_test_regional_context",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_regional.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_regional_context",
+      "_tgt": "backend_tests_test_regional_py_fixture"
+    },
+    {
       "source": "backend_tests_test_strategic_py_fixture",
       "target": "backend_tests_test_strategic_context",
       "relation": "references",
@@ -9222,10 +10865,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-18T09:03:06.370262+00:00",
+    "built_at": "2026-11-18T09:06:49.041702+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000418112608331089\\developer",
     "force": true,
-    "files_scanned": 41
+    "files_scanned": 50
   }
 }

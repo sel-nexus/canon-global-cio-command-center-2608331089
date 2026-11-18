@@ -6,6 +6,7 @@ import Register from './auth/Register';
 import Strategic from './dashboard/Strategic';
 import Regional from './dashboard/Regional';
 import Business from './dashboard/Business';
+import Operations from './dashboard/Operations';
 
 /** Show the verified account and revoke its session on request. */
 function Account() {
@@ -34,8 +35,9 @@ function Account() {
         <Link to="/dashboard/strategic" aria-current={['/account', '/dashboard/strategic'].includes(location.pathname) ? 'page' : undefined}>Strategic Command</Link>
         <Link to="/dashboard/executive-summary" aria-current={location.pathname === '/dashboard/executive-summary' ? 'page' : undefined}>Executive Summary</Link>
         <Link to="/dashboard/business" aria-current={location.pathname === '/dashboard/business' ? 'page' : undefined}>Business Impact</Link>
+        <Link to="/dashboard/operations" aria-current={location.pathname === '/dashboard/operations' ? 'page' : undefined}>Operations</Link>
       </nav>
-      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : <Strategic />}
+      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : location.pathname === '/dashboard/operations' ? <Operations /> : <Strategic />}
     </section>
   );
 }
@@ -57,6 +59,7 @@ export default function App() {
             <Route path="/dashboard/strategic" element={<Account />} />
             <Route path="/dashboard/executive-summary" element={<Account />} />
             <Route path="/dashboard/business" element={<Account />} />
+            <Route path="/dashboard/operations" element={<Account />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </main>

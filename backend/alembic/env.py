@@ -8,6 +8,7 @@ from app.models import user  # noqa: F401
 from app.models import strategic  # noqa: F401
 from app.models import regional  # noqa: F401
 from app.models import business  # noqa: F401
+from app.models import operations  # noqa: F401
 
 config = context.config
 target_metadata = Base.metadata
