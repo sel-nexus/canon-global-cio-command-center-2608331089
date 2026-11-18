@@ -14,7 +14,7 @@
       "label": "run_migrations_offline()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L18",
+      "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -24,7 +24,7 @@
       "label": "run_migrations_online()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L25",
+      "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -39,19 +39,19 @@
       "community": 2
     },
     {
-      "id": "backend_alembic_env_rationale_19",
+      "id": "backend_alembic_env_rationale_20",
       "label": "Render SQL without opening a database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
-      "id": "backend_alembic_env_rationale_26",
+      "id": "backend_alembic_env_rationale_27",
       "label": "Apply migrations using a temporary database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast"
     },
     {
@@ -267,6 +267,48 @@
       "file_type": "rationale",
       "source_file": "backend/alembic/versions/005_operations.py",
       "source_location": "L51",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_006_governance",
+      "label": "006_governance.py",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_006_governance_upgrade",
+      "label": "upgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_006_governance_downgrade",
+      "label": "downgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L51",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_006_governance_rationale_12",
+      "label": "Create governance tables and enforce their source integrity.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_006_governance_rationale_52",
+      "label": "Remove the innovation and risk tables.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L52",
       "_origin": "ast"
     },
     {
@@ -565,7 +607,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L22",
+      "source_location": "L24",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -580,11 +622,11 @@
       "community": 1
     },
     {
-      "id": "backend_app_main_rationale_23",
+      "id": "backend_app_main_rationale_25",
       "label": "Report process liveness independently of database availability.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
@@ -619,6 +661,76 @@
       "file_type": "rationale",
       "source_file": "backend/app/models/business.py",
       "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance",
+      "label": "governance.py",
+      "file_type": "code",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance_riskobservation",
+      "label": "RiskObservation",
+      "file_type": "code",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance_innovationquarter",
+      "label": "InnovationQuarter",
+      "file_type": "code",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L28",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance_innovationportfolio",
+      "label": "InnovationPortfolio",
+      "file_type": "code",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L46",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance_rationale_1",
+      "label": "Persist source-reported risk and innovation observations.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance_rationale_12",
+      "label": "Store one dated risk assessment without deriving its ratings.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance_rationale_29",
+      "label": "Store source-defined innovation outcomes for a reporting quarter.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_governance_rationale_47",
+      "label": "Store one source-supplied portfolio amount and unit per category and quarter.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L47",
       "_origin": "ast"
     },
     {
@@ -1070,6 +1182,80 @@
       "file_type": "rationale",
       "source_file": "backend/app/routers/business.py",
       "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance",
+      "label": "governance.py",
+      "file_type": "code",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_py_get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_risk",
+      "label": "risk()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_py_depends",
+      "label": "Depends",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_innovation",
+      "label": "innovation()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_rationale_1",
+      "label": "Expose authenticated source-reported risk and innovation data.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_rationale_17",
+      "label": "Return the most recent source-reported risk assessment.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_governance_rationale_23",
+      "label": "Return the latest available portfolio and innovation outcomes.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L23",
       "_origin": "ast"
     },
     {
@@ -1548,6 +1734,120 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_app_schemas_governance",
+      "label": "governance.py",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_riskrecord",
+      "label": "RiskRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_py_basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_riskoverview",
+      "label": "RiskOverview",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_innovationrecord",
+      "label": "InnovationRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L23",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_portfoliorecord",
+      "label": "PortfolioRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L34",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_innovationoverview",
+      "label": "InnovationOverview",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L45",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_rationale_1",
+      "label": "Describe source-reported risk and innovation responses.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_rationale_9",
+      "label": "Expose a dated risk assessment.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_rationale_19",
+      "label": "Return the latest source assessment or no assessment.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_rationale_24",
+      "label": "Expose outcomes from a single reporting quarter.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_rationale_35",
+      "label": "Expose a portfolio amount with its source unit and reporting period.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_governance_rationale_46",
+      "label": "Return the latest outcomes and the latest portfolio period independently.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L46",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_schemas_operations",
       "label": "operations.py",
       "file_type": "code",
@@ -1923,6 +2223,64 @@
       "file_type": "rationale",
       "source_file": "backend/app/services/business.py",
       "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_governance",
+      "label": "governance.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_governance_risk_overview",
+      "label": "risk_overview()",
+      "file_type": "code",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_governance_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_governance_innovation_overview",
+      "label": "innovation_overview()",
+      "file_type": "code",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_governance_rationale_1",
+      "label": "Retrieve the most recent persisted governance observations.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_governance_rationale_10",
+      "label": "Return the newest assessment without filling missing values from older rows.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_governance_rationale_16",
+      "label": "Return latest outcomes and all categories for the latest portfolio quarter.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L16",
       "_origin": "ast"
     },
     {
@@ -2379,6 +2737,125 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_governance",
+      "label": "test_governance.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_py_fixture",
+      "label": "fixture",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_context",
+      "label": "context()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L22",
+      "_py_fixture": "?",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_context_override",
+      "label": "override()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_login",
+      "label": "login()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L49",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_test_auth_empty_and_revocation",
+      "label": "test_auth_empty_and_revocation()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L57",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "label": "test_latest_persisted_values_and_missing_fields()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L72",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_test_database_constraints",
+      "label": "test_database_constraints()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L106",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_rationale_1",
+      "label": "Exercise authenticated governance against a disposable PostgreSQL database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_rationale_23",
+      "label": "Migrate and isolate the explicitly selected test database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_rationale_50",
+      "label": "Register and authenticate through the identity API.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L50",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_rationale_58",
+      "label": "Reject invalid and revoked sessions and preserve truly empty states.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L58",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_rationale_73",
+      "label": "Read latest separate reporting periods without inferring missing measures.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L73",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_governance_rationale_107",
+      "label": "Reject invalid periods, scores, counts, categories and duplicate records.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L107",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_operations",
       "label": "test_operations.py",
       "file_type": "code",
@@ -2783,6 +3260,14 @@
       "label": "business.spec.js",
       "file_type": "code",
       "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_governance_spec",
+      "label": "governance.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/governance.spec.js",
       "source_location": "L1",
       "_origin": "ast"
     },
@@ -3234,7 +3719,7 @@
       "label": "Account()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -3244,7 +3729,7 @@
       "label": "signOut()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -3254,7 +3739,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L46",
+      "source_location": "L50",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -3425,6 +3910,48 @@
       "file_type": "code",
       "source_file": "frontend/src/dashboard/business.test.jsx",
       "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_governance",
+      "label": "Governance.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Governance.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_governance_governance",
+      "label": "Governance()",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Governance.jsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_governance_test",
+      "label": "governance.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_innovation",
+      "label": "Innovation.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Innovation.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_innovation_innovation",
+      "label": "Innovation()",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Innovation.jsx",
+      "source_location": "L5",
+      "_callable": true,
       "_origin": "ast"
     },
     {
@@ -3608,7 +4135,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3618,7 +4145,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3633,22 +4160,22 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_19",
+      "source": "backend_alembic_env_rationale_20",
       "target": "backend_alembic_env_run_migrations_offline",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_26",
+      "source": "backend_alembic_env_rationale_27",
       "target": "backend_alembic_env_run_migrations_online",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3849,6 +4376,46 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/versions/005_operations.py",
       "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_006_governance",
+      "target": "backend_alembic_versions_006_governance_upgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_006_governance",
+      "target": "backend_alembic_versions_006_governance_downgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_006_governance_rationale_12",
+      "target": "backend_alembic_versions_006_governance_upgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_006_governance_rationale_52",
+      "target": "backend_alembic_versions_006_governance_downgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/006_governance.py",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4226,12 +4793,23 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_main",
+      "target": "backend_app_routers_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_main_health",
       "target": "backend_app_main_py_get",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -4242,7 +4820,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4257,12 +4835,12 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_23",
+      "source": "backend_app_main_rationale_25",
       "target": "backend_app_main_health",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4325,6 +4903,128 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/models/business.py",
       "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_riskobservation",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_innovationquarter",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_innovationportfolio",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_rationale_1",
+      "target": "backend_app_models_governance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_rationale_12",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_rationale_29",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_rationale_47",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5265,6 +5965,210 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/routers/business.py",
       "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_routers_auth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_schemas_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_services_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_risk",
+      "target": "backend_app_routers_governance_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_routers_governance_risk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_risk",
+      "target": "backend_app_routers_governance_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_risk",
+      "target": "backend_app_routers_governance_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_risk",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_risk",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_innovation",
+      "target": "backend_app_routers_governance_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_routers_governance_innovation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_innovation",
+      "target": "backend_app_routers_governance_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_innovation",
+      "target": "backend_app_routers_governance_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_innovation",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_innovation",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_rationale_1",
+      "target": "backend_app_routers_governance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_rationale_17",
+      "target": "backend_app_routers_governance_risk",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_rationale_23",
+      "target": "backend_app_routers_governance_innovation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6220,6 +7124,177 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_schemas_governance",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance",
+      "target": "backend_app_schemas_governance_riskrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_riskrecord",
+      "target": "backend_app_schemas_governance_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_riskoverview",
+      "target": "backend_app_schemas_governance_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance",
+      "target": "backend_app_schemas_governance_innovationrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_innovationrecord",
+      "target": "backend_app_schemas_governance_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance",
+      "target": "backend_app_schemas_governance_portfoliorecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_portfoliorecord",
+      "target": "backend_app_schemas_governance_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_innovationoverview",
+      "target": "backend_app_schemas_governance_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_rationale_1",
+      "target": "backend_app_schemas_governance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_rationale_9",
+      "target": "backend_app_schemas_governance_riskrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_rationale_19",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_rationale_24",
+      "target": "backend_app_schemas_governance_innovationrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_rationale_35",
+      "target": "backend_app_schemas_governance_portfoliorecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_governance_rationale_46",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/governance.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_schemas_operations",
       "target": "datetime",
       "relation": "imports",
@@ -6867,6 +7942,122 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/business.py",
       "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_models_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_schemas_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_services_governance_risk_overview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_risk_overview",
+      "target": "backend_app_services_governance_py_session",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_risk_overview",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_services_governance_innovation_overview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_services_governance_py_session",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_rationale_1",
+      "target": "backend_app_services_governance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_rationale_10",
+      "target": "backend_app_services_governance_risk_overview",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_rationale_16",
+      "target": "backend_app_services_governance_innovation_overview",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7669,6 +8860,226 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_governance",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_core_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_models_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_context",
+      "target": "backend_tests_test_governance_py_fixture",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_tests_test_governance_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_context",
+      "target": "backend_tests_test_governance_context_override",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_tests_test_governance_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_tests_test_governance_test_auth_empty_and_revocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_tests_test_governance_test_database_constraints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_context",
+      "target": "backend_tests_test_governance_context_override",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_auth_empty_and_revocation",
+      "target": "backend_tests_test_governance_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "target": "backend_tests_test_governance_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_rationale_1",
+      "target": "backend_tests_test_governance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_rationale_23",
+      "target": "backend_tests_test_governance_context",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_rationale_50",
+      "target": "backend_tests_test_governance_login",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_rationale_58",
+      "target": "backend_tests_test_governance_test_auth_empty_and_revocation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_rationale_73",
+      "target": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_rationale_107",
+      "target": "backend_tests_test_governance_test_database_constraints",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_operations",
       "target": "datetime",
       "relation": "imports",
@@ -8424,6 +9835,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_e2e_governance_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/governance.spec.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_e2e_operations_spec",
       "target": "ref_playwright_test",
       "relation": "imports_from",
@@ -9046,11 +10468,33 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_innovation",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_account",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9060,7 +10504,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9070,7 +10514,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L46",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9081,7 +10525,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L58",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9611,6 +11055,191 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/dashboard/business.test.jsx",
       "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Governance.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Governance.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Governance.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance",
+      "target": "frontend_src_dashboard_governance_governance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Governance.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "ref_testing_library_jest_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "frontend_src_dashboard_governance",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "frontend_src_dashboard_innovation",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_innovation",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Innovation.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_innovation",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Innovation.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_innovation",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Innovation.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_innovation",
+      "target": "frontend_src_dashboard_innovation_innovation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Innovation.jsx",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10309,6 +11938,28 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_governance_governance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_innovation_innovation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_auth_auth_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -10327,6 +11978,28 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/dashboard/business.test.jsx",
       "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "frontend_src_dashboard_governance_governance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_governance_test",
+      "target": "frontend_src_dashboard_innovation_innovation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/governance.test.jsx",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10392,6 +12065,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/models/business.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance",
+      "target": "backend_app_core_database_base",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/governance.py",
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
@@ -10557,6 +12241,72 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/routers/business.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_routers_auth_current_session",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_services_governance_innovation_overview",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance",
+      "target": "backend_app_services_governance_risk_overview",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
@@ -10826,6 +12576,94 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_schemas_governance_innovationrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_schemas_governance_portfoliorecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance",
+      "target": "backend_app_schemas_governance_riskrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_operations",
       "target": "backend_app_models_operations_incident",
       "relation": "imports",
@@ -11068,6 +12906,50 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_operations",
       "target": "backend_app_core_database_get_db",
       "relation": "imports",
@@ -11233,6 +13115,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_alembic_env",
+      "target": "backend_app_models_governance",
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/env.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_auth",
       "target": "backend_app_services_auth",
       "relation": "imports_from",
@@ -11261,7 +13154,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11365,6 +13258,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_governance_risk_overview",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_operations_incidents_data",
       "target": "backend_app_schemas_operations_incidentresponse",
       "relation": "calls",
@@ -11460,6 +13375,72 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_business.py",
       "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_database_constraints",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_database_constraints",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_database_constraints",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11603,6 +13584,39 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/models/business.py",
       "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_riskobservation",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_innovationquarter",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_governance_innovationportfolio",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/governance.py",
+      "source_location": "L46",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -11816,6 +13830,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_governance_innovation",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_risk",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_operations_incidents",
       "target": "backend_app_schemas_operations_incidentresponse",
       "relation": "uses",
@@ -11977,6 +14013,94 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/services/business.py",
       "source_location": "L9",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L18",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L17",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_risk_overview",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_schemas_governance_innovationoverview",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_schemas_governance_innovationrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L20",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_innovation_overview",
+      "target": "backend_app_schemas_governance_portfoliorecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L20",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_risk_overview",
+      "target": "backend_app_schemas_governance_riskoverview",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_governance_risk_overview",
+      "target": "backend_app_schemas_governance_riskrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L12",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -12212,6 +14336,72 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L82",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_database_constraints",
+      "target": "backend_app_models_governance_innovationportfolio",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L110",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L80",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_database_constraints",
+      "target": "backend_app_models_governance_innovationquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L110",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_latest_persisted_values_and_missing_fields",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L78",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_governance_test_database_constraints",
+      "target": "backend_app_models_governance_riskobservation",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L110",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
       "target": "backend_app_models_operations_incident",
       "relation": "uses",
@@ -12345,6 +14535,30 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_governance_risk",
+      "target": "backend_app_services_governance_risk_overview",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_governance_innovation",
+      "target": "backend_app_services_governance_innovation_overview",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_operations_incidents",
       "target": "backend_app_services_operations_incidents_data",
       "relation": "calls",
@@ -12400,7 +14614,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12412,7 +14626,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12424,7 +14638,31 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_account",
+      "target": "frontend_src_dashboard_governance_governance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_account",
+      "target": "frontend_src_dashboard_innovation_innovation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12436,7 +14674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L40",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12448,7 +14686,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12460,7 +14698,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L49",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12472,7 +14710,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L56",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12484,7 +14722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L57",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -12511,6 +14749,19 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_business_impact",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_core_database_get_db",
+      "_tgt": "backend_app_routers_business_impact"
     },
     {
       "source": "backend_app_core_database_get_db",
@@ -12566,15 +14817,28 @@
     },
     {
       "source": "backend_app_core_database_get_db",
-      "target": "backend_app_routers_business_impact",
+      "target": "backend_app_routers_operations_incidents",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
-      "source_file": "backend/app/routers/business.py",
+      "source_file": "backend/app/routers/operations.py",
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_business_impact",
+      "_src": "backend_app_routers_operations_incidents",
+      "_tgt": "backend_app_core_database_get_db"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_summary",
       "_tgt": "backend_app_core_database_get_db"
     },
     {
@@ -12596,7 +14860,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -12760,6 +15024,97 @@
       "_origin": "ast",
       "_src": "backend_app_routers_business_impact",
       "_tgt": "backend_app_routers_business_py_get"
+    },
+    {
+      "source": "backend_app_routers_operations_py_get",
+      "target": "backend_app_routers_operations_incidents",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_incidents",
+      "_tgt": "backend_app_routers_operations_py_get"
+    },
+    {
+      "source": "backend_app_routers_operations_py_get",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_summary",
+      "_tgt": "backend_app_routers_operations_py_get"
+    },
+    {
+      "source": "backend_app_routers_operations_py_session",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_summary",
+      "_tgt": "backend_app_routers_operations_py_session"
+    },
+    {
+      "source": "backend_app_routers_operations_py_depends",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_summary",
+      "_tgt": "backend_app_routers_operations_py_depends"
+    },
+    {
+      "source": "backend_app_routers_operations_py_query",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_summary",
+      "_tgt": "backend_app_routers_operations_py_query"
+    },
+    {
+      "source": "backend_app_routers_operations_py_ge",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_summary",
+      "_tgt": "backend_app_routers_operations_py_ge"
+    },
+    {
+      "source": "backend_app_routers_operations_py_le",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_operations_summary",
+      "_tgt": "backend_app_routers_operations_py_le"
     },
     {
       "source": "backend_app_routers_regional_py_get",
@@ -12931,6 +15286,19 @@
       "_tgt": "backend_app_services_auth_py_session"
     },
     {
+      "source": "backend_app_services_operations_py_session",
+      "target": "backend_app_services_operations_summary_data",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_operations_summary_data",
+      "_tgt": "backend_app_services_operations_py_session"
+    },
+    {
       "source": "backend_tests_test_auth_py_fixture",
       "target": "backend_tests_test_auth_client",
       "relation": "references",
@@ -12970,6 +15338,19 @@
       "_tgt": "backend_tests_test_business_py_fixture"
     },
     {
+      "source": "backend_tests_test_operations_py_fixture",
+      "target": "backend_tests_test_operations_context",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_operations_context",
+      "_tgt": "backend_tests_test_operations_py_fixture"
+    },
+    {
       "source": "backend_tests_test_regional_py_fixture",
       "target": "backend_tests_test_regional_context",
       "relation": "references",
@@ -12997,10 +15378,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-18T09:11:34.446289+00:00",
+    "built_at": "2026-11-18T09:15:53.664872+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000418112608331089\\developer",
     "force": true,
-    "files_scanned": 59
+    "files_scanned": 69
   }
 }

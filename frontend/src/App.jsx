@@ -9,6 +9,7 @@ import Business from './dashboard/Business';
 import Operations from './dashboard/Operations';
 import Governance from './dashboard/Governance';
 import Innovation from './dashboard/Innovation';
+import Partnerships from './dashboard/Partnerships';
 
 /** Show the verified account and revoke its session on request. */
 function Account() {
@@ -40,8 +41,9 @@ function Account() {
         <Link to="/dashboard/operations" aria-current={location.pathname === '/dashboard/operations' ? 'page' : undefined}>Operations</Link>
         <Link to="/dashboard/governance" aria-current={location.pathname === '/dashboard/governance' ? 'page' : undefined}>Risk &amp; Governance</Link>
         <Link to="/dashboard/innovation" aria-current={location.pathname === '/dashboard/innovation' ? 'page' : undefined}>Innovation</Link>
+        <Link to="/dashboard/partnerships" aria-current={location.pathname === '/dashboard/partnerships' ? 'page' : undefined}>Partnerships</Link>
       </nav>
-      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : location.pathname === '/dashboard/operations' ? <Operations /> : location.pathname === '/dashboard/governance' ? <Governance /> : location.pathname === '/dashboard/innovation' ? <Innovation /> : <Strategic />}
+      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : location.pathname === '/dashboard/operations' ? <Operations /> : location.pathname === '/dashboard/governance' ? <Governance /> : location.pathname === '/dashboard/innovation' ? <Innovation /> : location.pathname === '/dashboard/partnerships' ? <Partnerships /> : <Strategic />}
     </section>
   );
 }
@@ -66,6 +68,7 @@ export default function App() {
             <Route path="/dashboard/operations" element={<Account />} />
             <Route path="/dashboard/governance" element={<Account />} />
             <Route path="/dashboard/innovation" element={<Account />} />
+            <Route path="/dashboard/partnerships" element={<Account />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </main>

@@ -1,6 +1,6 @@
 # Canon Global CIO Command Center — executive dashboard
 
-This repository currently implements account registration, login, verified profile restoration, logout, Strategic Command, Executive Summary regional comparison, Business Impact, Operations, Risk & Governance and Innovation. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
+This repository currently implements account registration, login, verified profile restoration, logout, Strategic Command, Executive Summary regional comparison, Business Impact, Operations, Risk & Governance, Innovation and Partnerships. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
 
 ## Local development
 
@@ -50,6 +50,12 @@ Apply `alembic upgrade head`; no governance data is seeded. An authorized data o
 Load `innovation_quarters` with unique `year` and `quarter` (1–4), optional nonnegative `deployed_models` and `patent_disclosures`, and optional source-defined `innovation_index`. Load `innovation_portfolio` with unique year, quarter and category (`GenAI`, `Cloud Migration`, `Edge Computing`, `Automation`), nonnegative `amount` and a nonempty source `unit`. Update `updated_at` when importing changes. The authenticated `GET /api/v1/governance/innovation` returns the latest outcome quarter and all supplied categories from the latest portfolio quarter independently; their periods may differ. Missing categories are not assumed to be zero. Amounts are not combined across units. Data ownership, ingestion, measurement definitions and completeness remain decisions for stakeholders.
 
 Run `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_governance.py` from `backend`. The test migrates and truncates governance records, users and sessions in a disposable PostgreSQL database; never use valuable data or run tests concurrently on the same database. The browser spec requires a separate running application database containing risk, innovation outcome and portfolio records, and creates a test user.
+
+## Partnerships data
+
+Apply `alembic upgrade head`; no partner data is seeded. An authorized data owner loads `partner_performance`: unique vendor name, SLA compliance percentage (0–100), ROI multiple, source-defined delivery score, nonnegative annual spend, currency/unit, contract status, review quarter and optional innovation output. Annual spend and the current ROI are source-reported, not calculated. Load `partner_quarters` with partner ID, year, quarter (1–4), currency/unit, and optional spend, verified savings and ROI multiple. One row per partner and quarter is allowed. Update `updated_at` when importing changes. The data owner must establish score scales, currencies, fiscal-quarter conventions, verification and completeness; values from different currencies are not combined. Empty fields remain null. Quarterly ROI is not inferred from spend or savings. AI summaries are not implemented in this slice.
+
+Authenticated `GET /api/v1/partnerships?limit=20&offset=0&history_limit=20` returns a page of partners and their newest history in chronological order, with total counts. Limits are 1–100 and offset is nonnegative. The dashboard shows a chronological comparison table and allows supplier pagination; older history beyond the displayed limit is indicated. Run `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_partnerships.py` from `backend`: the test migrates and truncates partnership records, users and sessions in a disposable test database; do not use valuable data or run concurrently. The browser spec requires a separate running database with a partner and quarterly history and creates a real user.
 
 ## API and security
 

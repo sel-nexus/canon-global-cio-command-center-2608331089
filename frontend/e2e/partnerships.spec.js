@@ -1,0 +1,37 @@
+import { test, expect } from '@playwright/test';
+
+test('executive sees persisted supplier assessment and quarterly history', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+  const username = `partner${Date.now()}${Math.floor(Math.random() * 10000)}`;
+  await page.goto('/register');
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Email').fill(`${username}@example.com`);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Create account' }).click();
+  await expect(page.getByRole('status')).toContainText('Account created');
+  await page.getByRole('link', { name: 'Sign in' }).click();
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  const responsePromise = page.waitForResponse((response) => response.url().includes('/api/v1/partnerships?') && response.status() === 200);
+  await page.getByRole('link', { name: 'Partnerships' }).click();
+  const data = await (await responsePromise).json();
+  expect(data.partners.length, 'A persisted partner with quarterly history is required').toBeGreaterThan(0);
+  const partner = data.partners.find((row) => row.history.length > 0);
+  expect(partner, 'The first partner page requires quarterly history').toBeTruthy();
+  const section = page.locator('article').filter({ has: page.getByRole('heading', { name: partner.vendor_name, exact: true }) });
+  await expect(section).toContainText(partner.sla_compliance_pct);
+  await expect(section).toContainText(partner.delivery_score);
+  await expect(section).toContainText(partner.annual_spend);
+  const period = partner.history[partner.history.length - 1];
+  const row = section.getByRole('row', { name: new RegExp(`Q${period.quarter} ${period.year}`) });
+  await expect(row).toContainText(period.currency);
+  await expect(row).toContainText(period.spend ?? 'Not provided');
+  await expect(row).toContainText(period.verified_savings ?? 'Not provided');
+  await expect(row).toContainText(period.roi_multiple ?? 'Not provided');
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Partnerships', exact: true })).toBeVisible();
+  expect(errors).toEqual([]);
+});
