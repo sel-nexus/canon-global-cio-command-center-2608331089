@@ -1,0 +1,22 @@
+# Canon Global CIO Command Center — identity slice
+
+This repository currently implements account registration, login, verified profile restoration, and logout. Executive dashboard features are not included in this slice. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
+
+## Local development
+
+1. Copy `backend/.env.example` to `backend/.env` and `frontend/.env.example` to `frontend/.env`. The sample credentials are **development-only**. Supply a strong unique `JWT_SECRET` and database credentials in real deployments. Never commit `.env` files.
+2. Start PostgreSQL 16: `docker compose up -d db`. Compose creates the development database. For a separately managed PostgreSQL server, create `DB_NAME` first and set `DATABASE_URL` and `DB_NAME` in `backend/.env`; the application does not create databases or require database-creation privileges.
+3. In `backend`, create a Python 3.12 virtual environment, install `pip install -r requirements.txt`, run `alembic upgrade head`, then `uvicorn app.main:app --reload`. The API docs are at `http://localhost:8000/docs`.
+4. In `frontend`, run `npm ci` and `npm run dev`; open `http://localhost:5173`. Vite proxies `/api` to the backend. Alternatively run `docker compose up --build` and visit `http://localhost:8080`; nginx proxies `/api` to the backend. Database data persists in a named volume. Existing volumes retain their original credentials and database name.
+
+## Verification
+
+Create a **separate disposable PostgreSQL database** named e.g. `canon_cio_test` with the same dev account. Set `TEST_DATABASE_URL=postgresql+psycopg://canon:canon-dev-only@localhost:5432/canon_cio_test` in the environment before running `cd backend && PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_auth.py` (or use your virtualenv's Python). Tests migrate and truncate `users` and `auth_sessions` in that database; never use a valuable database. Tests refuse a URL without `test` in the database name or one equal to the configured application database.
+
+Run frontend component tests with `cd frontend && npm test`, production build with `npm run build`. For E2E, run the migrated backend and PostgreSQL, install Chromium with `node node_modules/@playwright/test/cli.js install chromium`, then `npm run e2e` in `frontend`. The E2E spec starts Vite and creates a unique real user in the configured development DB.
+
+## API and security
+
+`POST /api/v1/auth/register` accepts `username`, `email`, `password` and returns a profile (201); duplicates are 409 and invalid fields 422. `POST /api/v1/auth/login` accepts username/password and returns `access_token`, `token_type`, and `user`; bad credentials are 401. `GET /api/v1/auth/me` and `POST /api/v1/auth/logout` require `Authorization: Bearer <token>`; logout returns 204 and revokes only that session. Session records are checked on every protected request, along with user status, JWT signature and expiration. Passwords use bcrypt cost 12; passwords over 72 UTF-8 bytes are rejected. A token is held in sessionStorage, not passwords; refresh verifies it with the backend, and closing the tab clears it. Because script-readable tokens are vulnerable to XSS, deploy a restrictive CSP and consider a secure HttpOnly-cookie design before production.
+
+Use TLS at the ingress and for remote PostgreSQL connections, secure secrets management, least-privilege database credentials, appropriate registration controls, rate limits, audit logging and an agreed role-permission policy before production. Dev Compose is HTTP-only and its default credentials and JWT secret are not safe for deployment. `GET /api/health` reports process liveness only, not database readiness.
