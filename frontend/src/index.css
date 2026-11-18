@@ -38,3 +38,11 @@ table { border-collapse: collapse; width: 100%; margin-top: 20px; font-variant-n
 caption { text-align: left; color: #c1bbbb; }
 th, td { text-align: left; border-bottom: 1px solid #393535; padding: 8px; }
 nav { margin-top: 24px; }
+.dashboard-nav { display: flex; gap: 24px; flex-wrap: wrap; }
+.dashboard-nav [aria-current="page"] { font-weight: 600; }
+.table-scroll { overflow-x: auto; margin-bottom: 24px; }
+.regional-status { font-weight: 600; }
+.status-excellent, .status-good { color: #a2d6b8; }
+.status-warning { color: #e9c580; }
+.status-critical { color: #ffb5ad; }
+.regional-action { background: transparent; border: 1px solid #5a5353; margin: 0; padding: 8px 10px; white-space: nowrap; }

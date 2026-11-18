@@ -5,11 +5,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.routers.auth import router
 from app.routers.strategic import router as strategic_router
+from app.routers.regional import router as regional_router
 
 app = FastAPI(title="Canon CIO Command Center API", version="1.0.0", description="Identity and session API")
 app.add_middleware(CORSMiddleware, allow_origins=[origin.strip() for origin in settings.cors_origins.split(",") if origin.strip()], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 app.include_router(router)
 app.include_router(strategic_router)
+app.include_router(regional_router)
 
 
 @app.get("/api/health", tags=["health"])

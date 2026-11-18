@@ -1,6 +1,6 @@
-# Canon Global CIO Command Center — identity and strategic slices
+# Canon Global CIO Command Center — identity, strategic and regional slices
 
-This repository currently implements account registration, login, verified profile restoration, logout, and the Strategic Command view. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
+This repository currently implements account registration, login, verified profile restoration, logout, Strategic Command and Executive Summary regional comparison. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
 
 ## Local development
 
@@ -22,6 +22,12 @@ The strategic tests run with `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app
 Run `alembic upgrade head` before serving the strategic API. No business data is seeded. An authorized data owner must load verified observations into `strategic_metrics`: category (`business`, `risk`, `innovation`, `operations`), metric_name, metric_value, recorded_date and optional unit, trend (`up`, `down`, `neutral`), change_pct and insight. A metric name/category/date combination is unique. Load monthly budget comparisons into `strategic_budgets` with name, month (first day of month), optional unit, budget and actual; name/month is unique. Source systems, ingestion, KPI definitions and anomaly thresholds remain to be agreed. Stored insight text is displayed as supplied, not generated or assessed by the application.
 
 `GET /api/v1/dashboard/strategic-metrics` requires the existing bearer session and returns latest observations for each category/name within the current and preceding eleven calendar months, all observations in that window, monthly comparisons, and the latest observations with nonempty insights. The reporting window ends on the current UTC date; missing months stay missing and future records are excluded. `GET /api/v1/dashboard/strategic-metrics/export?format=json` returns the same data, and `format=csv` returns dated observations and budget comparisons including insight text. Text cells beginning like spreadsheet formulas are prefixed with an apostrophe in CSV; JSON retains original text. The dashboard displays an empty state until data is supplied.
+
+## Regional data
+
+Apply migrations with `alembic upgrade head`. No regional records are seeded. A data owner must load one current row per region into `regional_performance`, including `region`, `health_score`, `availability_pct`, `security_score`, `transformation_index`, and status (`Excellent`, `Good`, `Warning`, or `Critical`). Availability must be between 0 and 100. Set `updated_at` when importing updates; ORM updates set it automatically. The application does not calculate severity, score definitions, causes, or global totals. Both authenticated `/api/v1/metrics/regional-radar` and `/api/v1/metrics/regional-performance` return `{ "regions": [...] }` with the same source values and timestamps; missing records yield an empty array. The radar plots raw values together without asserting that their scales are comparable. Investigation exposes the stored evidence for Warning and Critical rows, not inferred causes or actions.
+
+Run regional backend tests with `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_regional.py` in `backend`. They migrate and truncate regional records, users and sessions in the disposable test database; never use valuable data or run tests concurrently against the same database. The regional browser journey requires a separate disposable running app database containing a source-provided Warning region, and creates a real test user.
 
 ## API and security
 

@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './auth/AuthContext';
 import Login from './auth/Login';
 import Register from './auth/Register';
 import Strategic from './dashboard/Strategic';
+import Regional from './dashboard/Regional';
 
 /** Show the verified account and revoke its session on request. */
 function Account() {
   const { user, loading, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [error, setError] = useState('');
   const [pending, setPending] = useState(false);
   if (loading) return <p role="status">Verifying session…</p>;
@@ -27,8 +29,11 @@ function Account() {
       <p className="muted">{user.email} · {user.role}</p>
       {error && <p role="alert" className="error">{error}</p>}
       <button type="button" disabled={pending} onClick={signOut}>{pending ? 'Signing out…' : 'Sign out'}</button>
-      <nav aria-label="Dashboard"><Link to="/dashboard/strategic" aria-current="page">Strategic Command</Link></nav>
-      <Strategic />
+      <nav aria-label="Dashboard" className="dashboard-nav">
+        <Link to="/dashboard/strategic" aria-current={location.pathname !== '/dashboard/executive-summary' ? 'page' : undefined}>Strategic Command</Link>
+        <Link to="/dashboard/executive-summary" aria-current={location.pathname === '/dashboard/executive-summary' ? 'page' : undefined}>Executive Summary</Link>
+      </nav>
+      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : <Strategic />}
     </section>
   );
 }
@@ -48,6 +53,7 @@ export default function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/account" element={<Account />} />
             <Route path="/dashboard/strategic" element={<Account />} />
+            <Route path="/dashboard/executive-summary" element={<Account />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </main>
