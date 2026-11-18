@@ -10,6 +10,7 @@ import Operations from './dashboard/Operations';
 import Governance from './dashboard/Governance';
 import Innovation from './dashboard/Innovation';
 import Partnerships from './dashboard/Partnerships';
+import Assistant from './dashboard/Assistant';
 
 /** Show the verified account and revoke its session on request. */
 function Account() {
@@ -18,6 +19,8 @@ function Account() {
   const location = useLocation();
   const [error, setError] = useState('');
   const [pending, setPending] = useState(false);
+  const [assistantLaunch, setAssistantLaunch] = useState(null);
+  const tab = location.pathname.split('/').pop() === 'account' ? 'strategic' : location.pathname.split('/').pop();
   if (loading) return <p role="status">Verifying session…</p>;
   if (!user) return <Navigate to="/login" replace />;
   async function signOut() {
@@ -43,7 +46,8 @@ function Account() {
         <Link to="/dashboard/innovation" aria-current={location.pathname === '/dashboard/innovation' ? 'page' : undefined}>Innovation</Link>
         <Link to="/dashboard/partnerships" aria-current={location.pathname === '/dashboard/partnerships' ? 'page' : undefined}>Partnerships</Link>
       </nav>
-      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : location.pathname === '/dashboard/operations' ? <Operations /> : location.pathname === '/dashboard/governance' ? <Governance /> : location.pathname === '/dashboard/innovation' ? <Innovation /> : location.pathname === '/dashboard/partnerships' ? <Partnerships /> : <Strategic />}
+      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : location.pathname === '/dashboard/operations' ? <Operations /> : location.pathname === '/dashboard/governance' ? <Governance /> : location.pathname === '/dashboard/innovation' ? <Innovation /> : location.pathname === '/dashboard/partnerships' ? <Partnerships onSummarize={() => setAssistantLaunch({ tab: 'partnerships', query: 'Summarize partnership performance for contract review and negotiation preparation.' })} /> : <Strategic />}
+      <Assistant tab={tab} launch={assistantLaunch} onLaunchHandled={() => setAssistantLaunch(null)} />
     </section>
   );
 }

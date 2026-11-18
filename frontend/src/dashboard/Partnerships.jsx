@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { api } from '../api/client';
 
 /** Show supplier assessments and source-reported quarterly financial history. */
-export default function Partnerships() {
+export default function Partnerships({ onSummarize }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -27,6 +27,7 @@ export default function Partnerships() {
       <p className="eyebrow">Executive dashboard</p>
       <h1 id="partnerships-title">Partnerships</h1>
       <p className="muted">Source-reported supplier assessments and quarterly history.</p>
+      {onSummarize && <button type="button" onClick={onSummarize}>Summarize partnerships</button>}
       {loading && <p role="status">Loading partnerships…</p>}
       {error && <div role="alert"><p className="error">{error}</p><button type="button" onClick={() => setVersion((v) => v + 1)}>Retry</button></div>}
       {!loading && !error && data && (data.partners.length === 0 && offset === 0 ? <p>No partnership data available.</p> : (

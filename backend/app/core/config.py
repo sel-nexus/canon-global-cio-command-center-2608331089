@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     jwt_secret: str = "dev-secret-change-in-production-at-least-32-characters"
     access_token_minutes: int = Field(default=60, gt=0)
     cors_origins: str = "http://localhost:5173"
+    ai_enabled: bool = False
+    ai_endpoint: str = ""
+    ai_model: str = ""
+    ai_api_key: str = ""
 
     @property
     def application_url(self) -> URL:

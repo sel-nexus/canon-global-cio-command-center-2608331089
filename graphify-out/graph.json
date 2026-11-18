@@ -14,7 +14,7 @@
       "label": "run_migrations_offline()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L19",
+      "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -24,7 +24,7 @@
       "label": "run_migrations_online()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L26",
+      "source_location": "L27",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -39,19 +39,19 @@
       "community": 2
     },
     {
-      "id": "backend_alembic_env_rationale_20",
+      "id": "backend_alembic_env_rationale_21",
       "label": "Render SQL without opening a database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast"
     },
     {
-      "id": "backend_alembic_env_rationale_27",
+      "id": "backend_alembic_env_rationale_28",
       "label": "Apply migrations using a temporary database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast"
     },
     {
@@ -309,6 +309,48 @@
       "file_type": "rationale",
       "source_file": "backend/alembic/versions/006_governance.py",
       "source_location": "L52",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_007_partnerships",
+      "label": "007_partnerships.py",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_007_partnerships_upgrade",
+      "label": "upgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_007_partnerships_downgrade",
+      "label": "downgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L48",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_007_partnerships_rationale_12",
+      "label": "Create partnership tables and enforce source integrity.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_007_partnerships_rationale_49",
+      "label": "Remove partnership history and assessments.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L49",
       "_origin": "ast"
     },
     {
@@ -607,7 +649,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L24",
+      "source_location": "L26",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -622,11 +664,11 @@
       "community": 1
     },
     {
-      "id": "backend_app_main_rationale_25",
+      "id": "backend_app_main_rationale_27",
       "label": "Report process liveness independently of database availability.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast"
     },
     {
@@ -783,6 +825,58 @@
       "file_type": "rationale",
       "source_file": "backend/app/models/operations.py",
       "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_partnerships",
+      "label": "partnerships.py",
+      "file_type": "code",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_partnerships_partnerperformance",
+      "label": "PartnerPerformance",
+      "file_type": "code",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_partnerships_partnerquarter",
+      "label": "PartnerQuarter",
+      "file_type": "code",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_partnerships_rationale_1",
+      "label": "Persist supplier assessments and source-reported quarterly financial history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_partnerships_rationale_12",
+      "label": "Store a current vendor assessment without deriving its measures.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_partnerships_rationale_36",
+      "label": "Store independent reported spend, verified savings and ROI for a quarter.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L36",
       "_origin": "ast"
     },
     {
@@ -1354,6 +1448,87 @@
       "file_type": "rationale",
       "source_file": "backend/app/routers/operations.py",
       "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships",
+      "label": "partnerships.py",
+      "file_type": "code",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_py_get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_partnerships",
+      "label": "partnerships()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_py_depends",
+      "label": "Depends",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_py_query",
+      "label": "Query",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_py_ge",
+      "label": "ge",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_py_le",
+      "label": "le",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_rationale_1",
+      "label": "Expose authenticated supplier performance and quarterly history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_partnerships_rationale_17",
+      "label": "Return a bounded page of partner assessments and recent history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L17",
       "_origin": "ast"
     },
     {
@@ -1944,6 +2119,84 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_app_schemas_partnerships",
+      "label": "partnerships.py",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_partnerquarterrecord",
+      "label": "PartnerQuarterRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_py_basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_partnerrecord",
+      "label": "PartnerRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L20",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_partnershipsresponse",
+      "label": "PartnershipsResponse",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L38",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_rationale_1",
+      "label": "Describe source-reported supplier assessments and history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_rationale_9",
+      "label": "Expose one reporting period without calculating missing fields.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_rationale_21",
+      "label": "Expose a current assessment and its recent financial history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_partnerships_rationale_39",
+      "label": "Return a page of partners and their bounded histories.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L39",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_schemas_regional",
       "label": "regional.py",
       "file_type": "code",
@@ -2339,6 +2592,47 @@
       "file_type": "rationale",
       "source_file": "backend/app/services/operations.py",
       "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_partnerships",
+      "label": "partnerships.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_partnerships_partnerships_data",
+      "label": "partnerships_data()",
+      "file_type": "code",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_partnerships_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_partnerships_rationale_1",
+      "label": "Read supplier assessments and bounded source-reported histories.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_partnerships_rationale_10",
+      "label": "Return a supplier page and the latest quarters in chronological order.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L10",
       "_origin": "ast"
     },
     {
@@ -2975,6 +3269,142 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_partnerships",
+      "label": "test_partnerships.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_py_fixture",
+      "label": "fixture",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_context",
+      "label": "context()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L21",
+      "_py_fixture": "?",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_context_override",
+      "label": "override()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_login",
+      "label": "login()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L48",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_partner",
+      "label": "partner()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L56",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_test_auth_empty_and_session_revocation",
+      "label": "test_auth_empty_and_session_revocation()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L61",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "label": "test_persisted_assessments_history_and_bounds()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L73",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_test_constraints_and_cascade",
+      "label": "test_constraints_and_cascade()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L106",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_rationale_1",
+      "label": "Exercise supplier data and authentication against disposable PostgreSQL.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_rationale_22",
+      "label": "Migrate and isolate the selected disposable test database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_rationale_49",
+      "label": "Create an authenticated identity through the real API.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L49",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_rationale_57",
+      "label": "Create a complete source-supplied supplier assessment.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L57",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_rationale_62",
+      "label": "Reject missing, forged and revoked sessions and report empty data.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L62",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_rationale_74",
+      "label": "Return persisted, ordered history with nulls and independently reported values.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L74",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_partnerships_rationale_107",
+      "label": "Enforce periods, uniqueness, foreign keys and deletion of history.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L107",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_regional",
       "label": "test_regional.py",
       "file_type": "code",
@@ -3276,6 +3706,14 @@
       "label": "operations.spec.js",
       "file_type": "code",
       "source_file": "frontend/e2e/operations.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_partnerships_spec",
+      "label": "partnerships.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/partnerships.spec.js",
       "source_location": "L1",
       "_origin": "ast"
     },
@@ -3719,7 +4157,7 @@
       "label": "Account()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -3729,7 +4167,7 @@
       "label": "signOut()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -3739,7 +4177,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L50",
+      "source_location": "L52",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -4004,6 +4442,39 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_dashboard_partnerships",
+      "label": "Partnerships.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Partnerships.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_partnerships_partnerships",
+      "label": "Partnerships()",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Partnerships.jsx",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_partnerships_test",
+      "label": "partnerships.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_partnerships_test_partner",
+      "label": "partner",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_dashboard_regional",
       "label": "Regional.jsx",
       "file_type": "code",
@@ -4135,7 +4606,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4145,7 +4616,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4160,22 +4631,22 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_20",
+      "source": "backend_alembic_env_rationale_21",
       "target": "backend_alembic_env_run_migrations_offline",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_27",
+      "source": "backend_alembic_env_rationale_28",
       "target": "backend_alembic_env_run_migrations_online",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4416,6 +4887,46 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/versions/006_governance.py",
       "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_007_partnerships",
+      "target": "backend_alembic_versions_007_partnerships_upgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_007_partnerships",
+      "target": "backend_alembic_versions_007_partnerships_downgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_007_partnerships_rationale_12",
+      "target": "backend_alembic_versions_007_partnerships_upgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_007_partnerships_rationale_49",
+      "target": "backend_alembic_versions_007_partnerships_downgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/007_partnerships.py",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4804,12 +5315,23 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_main",
+      "target": "backend_app_routers_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_main_health",
       "target": "backend_app_main_py_get",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -4820,7 +5342,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4835,12 +5357,12 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_25",
+      "source": "backend_app_main_rationale_27",
       "target": "backend_app_main_health",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L25",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5117,6 +5639,98 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/models/operations.py",
       "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships_partnerperformance",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships_partnerquarter",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships_rationale_1",
+      "target": "backend_app_models_partnerships",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships_rationale_12",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships_rationale_36",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6443,6 +7057,168 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_routers_auth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_schemas_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_services_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_routers_partnerships_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_routers_partnerships_partnerships",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_routers_partnerships_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_routers_partnerships_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_routers_partnerships_py_query",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_routers_partnerships_py_ge",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_routers_partnerships_py_le",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_rationale_1",
+      "target": "backend_app_routers_partnerships",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_rationale_17",
+      "target": "backend_app_routers_partnerships_partnerships",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_regional",
       "target": "backend_app_core_database",
       "relation": "imports_from",
@@ -7436,6 +8212,117 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_schemas_partnerships",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships",
+      "target": "backend_app_schemas_partnerships_partnerquarterrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships_partnerquarterrecord",
+      "target": "backend_app_schemas_partnerships_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships",
+      "target": "backend_app_schemas_partnerships_partnerrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships_partnerrecord",
+      "target": "backend_app_schemas_partnerships_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships_partnershipsresponse",
+      "target": "backend_app_schemas_partnerships_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships_rationale_1",
+      "target": "backend_app_schemas_partnerships",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships_rationale_9",
+      "target": "backend_app_schemas_partnerships_partnerquarterrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships_rationale_21",
+      "target": "backend_app_schemas_partnerships_partnerrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_partnerships_rationale_39",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/partnerships.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_schemas_regional",
       "target": "datetime",
       "relation": "imports",
@@ -8174,6 +9061,80 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/operations.py",
       "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_models_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_schemas_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_services_partnerships_partnerships_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_services_partnerships_py_session",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_rationale_1",
+      "target": "backend_app_services_partnerships",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_rationale_10",
+      "target": "backend_app_services_partnerships_partnerships_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9300,6 +10261,257 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_app_core_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_app_models_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_context",
+      "target": "backend_tests_test_partnerships_py_fixture",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_tests_test_partnerships_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_context",
+      "target": "backend_tests_test_partnerships_context_override",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_tests_test_partnerships_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_tests_test_partnerships_partner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_tests_test_partnerships_test_auth_empty_and_session_revocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_tests_test_partnerships_test_constraints_and_cascade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_context",
+      "target": "backend_tests_test_partnerships_context_override",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_auth_empty_and_session_revocation",
+      "target": "backend_tests_test_partnerships_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "target": "backend_tests_test_partnerships_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "target": "backend_tests_test_partnerships_partner",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_constraints_and_cascade",
+      "target": "backend_tests_test_partnerships_partner",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_rationale_1",
+      "target": "backend_tests_test_partnerships",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_rationale_22",
+      "target": "backend_tests_test_partnerships_context",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_rationale_49",
+      "target": "backend_tests_test_partnerships_login",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_rationale_57",
+      "target": "backend_tests_test_partnerships_partner",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_rationale_62",
+      "target": "backend_tests_test_partnerships_test_auth_empty_and_session_revocation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_rationale_74",
+      "target": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_rationale_107",
+      "target": "backend_tests_test_partnerships_test_constraints_and_cascade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional",
       "target": "backend_app_core_config",
       "relation": "imports_from",
@@ -9852,6 +11064,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/operations.spec.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_partnerships_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/partnerships.spec.js",
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast"
@@ -10490,11 +11713,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_account",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10504,7 +11738,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10514,7 +11748,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L50",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10525,7 +11759,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L62",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11427,6 +12661,147 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_dashboard_partnerships",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Partnerships.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Partnerships.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Partnerships.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships",
+      "target": "frontend_src_dashboard_partnerships_partnerships",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Partnerships.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "ref_testing_library_jest_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "frontend_src_dashboard_partnerships",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "frontend_src_dashboard_partnerships_test_partner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_dashboard_regional",
       "target": "ref_react",
       "relation": "imports_from",
@@ -11960,6 +13335,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_partnerships_partnerships",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_auth_auth_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -12010,6 +13396,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_partnerships_test",
+      "target": "frontend_src_dashboard_partnerships_partnerships",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/partnerships.test.jsx",
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
@@ -12087,6 +13484,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/models/operations.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships",
+      "target": "backend_app_core_database_base",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/partnerships.py",
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
@@ -12373,6 +13781,50 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/routers/operations.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_routers_auth_current_session",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships",
+      "target": "backend_app_services_partnerships_partnerships_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/partnerships.py",
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
@@ -12730,6 +14182,61 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_schemas_partnerships_partnerquarterrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_schemas_partnerships_partnerrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_regional",
       "target": "backend_app_models_regional_regionalperformance",
       "relation": "imports",
@@ -12983,6 +14490,39 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional",
       "target": "backend_app_core_database_get_db",
       "relation": "imports",
@@ -13126,6 +14666,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_alembic_env",
+      "target": "backend_app_models_partnerships",
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/env.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_auth",
       "target": "backend_app_services_auth",
       "relation": "imports_from",
@@ -13154,7 +14705,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -13298,6 +14849,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/operations.py",
       "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -13489,6 +15051,39 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_partnerships_partner",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_constraints_and_cascade",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional_record",
       "target": "backend_app_models_regional_regionalperformance",
       "relation": "calls",
@@ -13639,6 +15234,28 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/models/operations.py",
       "source_location": "L32",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships_partnerperformance",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_partnerships_partnerquarter",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/partnerships.py",
+      "source_location": "L35",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -13870,6 +15487,17 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/routers/operations.py",
       "source_location": "L22",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L16",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -14182,6 +15810,61 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L17",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_schemas_partnerships_partnerquarterrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L20",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_schemas_partnerships_partnerrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L23",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_partnerships_partnerships_data",
+      "target": "backend_app_schemas_partnerships_partnershipsresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/partnerships.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_regional_regional_data",
       "target": "backend_app_models_regional_regionalperformance",
       "relation": "uses",
@@ -14446,6 +16129,61 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_partnerships_partner",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L58",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L101",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_constraints_and_cascade",
+      "target": "backend_app_models_partnerships_partnerperformance",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L125",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_persisted_assessments_history_and_bounds",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L83",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_partnerships_test_constraints_and_cascade",
+      "target": "backend_app_models_partnerships_partnerquarter",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_partnerships.py",
+      "source_location": "L114",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional_record",
       "target": "backend_app_models_regional_regionalperformance",
       "relation": "uses",
@@ -14583,6 +16321,18 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_partnerships_partnerships",
+      "target": "backend_app_services_partnerships_partnerships_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/partnerships.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_regional_regional_radar",
       "target": "backend_app_services_regional_regional_data",
       "relation": "calls",
@@ -14614,7 +16364,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14626,7 +16376,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14638,7 +16388,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14650,7 +16400,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14662,7 +16412,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_account",
+      "target": "frontend_src_dashboard_partnerships_partnerships",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14674,7 +16436,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14686,7 +16448,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14698,7 +16460,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L53",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14710,7 +16472,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L60",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14722,7 +16484,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L61",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14762,6 +16524,32 @@
       "_origin": "ast",
       "_src": "backend_app_core_database_get_db",
       "_tgt": "backend_app_routers_business_impact"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_operations_incidents",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_core_database_get_db",
+      "_tgt": "backend_app_routers_operations_incidents"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_core_database_get_db",
+      "_tgt": "backend_app_routers_operations_summary"
     },
     {
       "source": "backend_app_core_database_get_db",
@@ -14817,28 +16605,28 @@
     },
     {
       "source": "backend_app_core_database_get_db",
-      "target": "backend_app_routers_operations_incidents",
+      "target": "backend_app_routers_governance_innovation",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
-      "source_file": "backend/app/routers/operations.py",
-      "source_location": "L16",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_incidents",
+      "_src": "backend_app_routers_governance_innovation",
       "_tgt": "backend_app_core_database_get_db"
     },
     {
       "source": "backend_app_core_database_get_db",
-      "target": "backend_app_routers_operations_summary",
+      "target": "backend_app_routers_governance_risk",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
-      "source_file": "backend/app/routers/operations.py",
-      "source_location": "L22",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_summary",
+      "_src": "backend_app_routers_governance_risk",
       "_tgt": "backend_app_core_database_get_db"
     },
     {
@@ -14860,7 +16648,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -15026,6 +16814,58 @@
       "_tgt": "backend_app_routers_business_py_get"
     },
     {
+      "source": "backend_app_routers_governance_py_get",
+      "target": "backend_app_routers_governance_innovation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_governance_innovation",
+      "_tgt": "backend_app_routers_governance_py_get"
+    },
+    {
+      "source": "backend_app_routers_governance_py_get",
+      "target": "backend_app_routers_governance_risk",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_governance_risk",
+      "_tgt": "backend_app_routers_governance_py_get"
+    },
+    {
+      "source": "backend_app_routers_governance_py_session",
+      "target": "backend_app_routers_governance_innovation",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_governance_innovation",
+      "_tgt": "backend_app_routers_governance_py_session"
+    },
+    {
+      "source": "backend_app_routers_governance_py_depends",
+      "target": "backend_app_routers_governance_innovation",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/governance.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_routers_governance_innovation",
+      "_tgt": "backend_app_routers_governance_py_depends"
+    },
+    {
       "source": "backend_app_routers_operations_py_get",
       "target": "backend_app_routers_operations_incidents",
       "relation": "references",
@@ -15048,8 +16888,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_summary",
-      "_tgt": "backend_app_routers_operations_py_get"
+      "_src": "backend_app_routers_operations_py_get",
+      "_tgt": "backend_app_routers_operations_summary"
     },
     {
       "source": "backend_app_routers_operations_py_session",
@@ -15061,8 +16901,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_summary",
-      "_tgt": "backend_app_routers_operations_py_session"
+      "_src": "backend_app_routers_operations_py_session",
+      "_tgt": "backend_app_routers_operations_summary"
     },
     {
       "source": "backend_app_routers_operations_py_depends",
@@ -15074,8 +16914,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_summary",
-      "_tgt": "backend_app_routers_operations_py_depends"
+      "_src": "backend_app_routers_operations_py_depends",
+      "_tgt": "backend_app_routers_operations_summary"
     },
     {
       "source": "backend_app_routers_operations_py_query",
@@ -15087,8 +16927,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_summary",
-      "_tgt": "backend_app_routers_operations_py_query"
+      "_src": "backend_app_routers_operations_py_query",
+      "_tgt": "backend_app_routers_operations_summary"
     },
     {
       "source": "backend_app_routers_operations_py_ge",
@@ -15100,8 +16940,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_summary",
-      "_tgt": "backend_app_routers_operations_py_ge"
+      "_src": "backend_app_routers_operations_py_ge",
+      "_tgt": "backend_app_routers_operations_summary"
     },
     {
       "source": "backend_app_routers_operations_py_le",
@@ -15113,8 +16953,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_operations_summary",
-      "_tgt": "backend_app_routers_operations_py_le"
+      "_src": "backend_app_routers_operations_py_le",
+      "_tgt": "backend_app_routers_operations_summary"
     },
     {
       "source": "backend_app_routers_regional_py_get",
@@ -15286,6 +17126,19 @@
       "_tgt": "backend_app_services_auth_py_session"
     },
     {
+      "source": "backend_app_services_governance_py_session",
+      "target": "backend_app_services_governance_innovation_overview",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/governance.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_services_governance_innovation_overview",
+      "_tgt": "backend_app_services_governance_py_session"
+    },
+    {
       "source": "backend_app_services_operations_py_session",
       "target": "backend_app_services_operations_summary_data",
       "relation": "references",
@@ -15295,8 +17148,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_services_operations_summary_data",
-      "_tgt": "backend_app_services_operations_py_session"
+      "_src": "backend_app_services_operations_py_session",
+      "_tgt": "backend_app_services_operations_summary_data"
     },
     {
       "source": "backend_tests_test_auth_py_fixture",
@@ -15336,6 +17189,19 @@
       "_origin": "ast",
       "_src": "backend_tests_test_business_context",
       "_tgt": "backend_tests_test_business_py_fixture"
+    },
+    {
+      "source": "backend_tests_test_governance_py_fixture",
+      "target": "backend_tests_test_governance_context",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_governance.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_governance_context",
+      "_tgt": "backend_tests_test_governance_py_fixture"
     },
     {
       "source": "backend_tests_test_operations_py_fixture",
@@ -15378,10 +17244,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-18T09:15:53.664872+00:00",
+    "built_at": "2026-11-18T09:19:41.987385+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000418112608331089\\developer",
     "force": true,
-    "files_scanned": 69
+    "files_scanned": 78
   }
 }
