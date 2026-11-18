@@ -5,6 +5,7 @@ from sqlalchemy import create_engine
 from app.core.config import settings
 from app.core.database import Base
 from app.models import user  # noqa: F401
+from app.models import strategic  # noqa: F401
 
 config = context.config
 target_metadata = Base.metadata

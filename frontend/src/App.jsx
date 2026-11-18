@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate } from 'react
 import { AuthProvider, useAuth } from './auth/AuthContext';
 import Login from './auth/Login';
 import Register from './auth/Register';
+import Strategic from './dashboard/Strategic';
 
 /** Show the verified account and revoke its session on request. */
 function Account() {
@@ -20,13 +21,14 @@ function Account() {
     finally { setPending(false); }
   }
   return (
-    <section className="auth-panel">
+    <section>
       <p className="eyebrow">Verified session</p>
       <h1>Welcome, {user.username}</h1>
       <p className="muted">{user.email} · {user.role}</p>
-      <p>Your account is connected. Executive views are not yet available.</p>
       {error && <p role="alert" className="error">{error}</p>}
       <button type="button" disabled={pending} onClick={signOut}>{pending ? 'Signing out…' : 'Sign out'}</button>
+      <nav aria-label="Dashboard"><Link to="/dashboard/strategic" aria-current="page">Strategic Command</Link></nav>
+      <Strategic />
     </section>
   );
 }
@@ -45,6 +47,7 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/dashboard/strategic" element={<Account />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </main>

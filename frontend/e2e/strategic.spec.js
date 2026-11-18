@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('authenticated strategic dashboard renders real API content and exports', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+  const username = `strategic${Date.now()}${Math.floor(Math.random() * 10000)}`;
+  await page.goto('/register');
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Email').fill(`${username}@example.com`);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Create account' }).click();
+  await page.getByRole('link', { name: 'Sign in' }).click();
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Password').fill('password123');
+  const responsePromise = page.waitForResponse((response) => response.url().endsWith('/dashboard/strategic-metrics') && response.status() === 200);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  const response = await responsePromise;
+  const data = await response.json();
+  await expect(page.getByRole('heading', { name: 'Strategic Command' })).toBeVisible();
+  if (data.metrics.length) {
+    await expect(page.getByRole('heading', { name: data.metrics[0].metric_name }).first()).toBeVisible();
+    await expect(page.getByRole('img', { name: `${data.metrics[0].metric_name} performance chart` })).toBeVisible();
+  } else if (!data.budgets.length) {
+    await expect(page.getByText('No strategic data available for this period.')).toBeVisible();
+  }
+  const download = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export CSV' }).click();
+  expect((await download).suggestedFilename()).toBe('strategic-metrics.csv');
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Strategic Command' })).toBeVisible();
+  expect(errors).toEqual([]);
+});

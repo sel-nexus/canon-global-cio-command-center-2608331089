@@ -1,6 +1,6 @@
-# Canon Global CIO Command Center — identity slice
+# Canon Global CIO Command Center — identity and strategic slices
 
-This repository currently implements account registration, login, verified profile restoration, and logout. Executive dashboard features are not included in this slice. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
+This repository currently implements account registration, login, verified profile restoration, logout, and the Strategic Command view. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
 
 ## Local development
 
@@ -14,6 +14,14 @@ This repository currently implements account registration, login, verified profi
 Create a **separate disposable PostgreSQL database** named e.g. `canon_cio_test` with the same dev account. Set `TEST_DATABASE_URL=postgresql+psycopg://canon:canon-dev-only@localhost:5432/canon_cio_test` in the environment before running `cd backend && PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_auth.py` (or use your virtualenv's Python). Tests migrate and truncate `users` and `auth_sessions` in that database; never use a valuable database. Tests refuse a URL without `test` in the database name or one equal to the configured application database.
 
 Run frontend component tests with `cd frontend && npm test`, production build with `npm run build`. For E2E, run the migrated backend and PostgreSQL, install Chromium with `node node_modules/@playwright/test/cli.js install chromium`, then `npm run e2e` in `frontend`. The E2E spec starts Vite and creates a unique real user in the configured development DB.
+
+The strategic tests run with `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_strategic.py` from `backend`. They migrate and truncate `strategic_metrics`, `strategic_budgets`, `auth_sessions`, and `users` in the dedicated test database. Do not point them at valuable data or run identity and strategic tests against the same database concurrently.
+
+## Strategic data and exports
+
+Run `alembic upgrade head` before serving the strategic API. No business data is seeded. An authorized data owner must load verified observations into `strategic_metrics`: category (`business`, `risk`, `innovation`, `operations`), metric_name, metric_value, recorded_date and optional unit, trend (`up`, `down`, `neutral`), change_pct and insight. A metric name/category/date combination is unique. Load monthly budget comparisons into `strategic_budgets` with name, month (first day of month), optional unit, budget and actual; name/month is unique. Source systems, ingestion, KPI definitions and anomaly thresholds remain to be agreed. Stored insight text is displayed as supplied, not generated or assessed by the application.
+
+`GET /api/v1/dashboard/strategic-metrics` requires the existing bearer session and returns latest observations for each category/name within the current and preceding eleven calendar months, all observations in that window, monthly comparisons, and the latest observations with nonempty insights. The reporting window ends on the current UTC date; missing months stay missing and future records are excluded. `GET /api/v1/dashboard/strategic-metrics/export?format=json` returns the same data, and `format=csv` returns dated observations and budget comparisons including insight text. Text cells beginning like spreadsheet formulas are prefixed with an apostrophe in CSV; JSON retains original text. The dashboard displays an empty state until data is supplied.
 
 ## API and security
 

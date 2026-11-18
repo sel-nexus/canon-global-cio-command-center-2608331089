@@ -25,3 +25,16 @@ a { color: #ffaaa6; }
 :focus-visible { outline: 3px solid #ffaaa6; outline-offset: 3px; }
 .error { color: #ffb5ad; }
 @media (max-width: 480px) { .brand span { display: block; margin-left: 0; } }
+.strategic { margin-top: 56px; }
+.strategic-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+.export-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.export-actions button { background: transparent; border: 1px solid #5a5353; }
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin: 32px 0; }
+.metric-card, .chart-panel { border: 1px solid #393535; border-radius: 6px; padding: 20px; margin-bottom: 16px; }
+.metric-card h2, .chart-panel h3 { font-size: 1rem; }
+.metric-value { font-size: 1.8rem; font-variant-numeric: tabular-nums; margin: 12px 0; }
+.chart-container { height: 260px; position: relative; }
+table { border-collapse: collapse; width: 100%; margin-top: 20px; font-variant-numeric: tabular-nums; }
+caption { text-align: left; color: #c1bbbb; }
+th, td { text-align: left; border-bottom: 1px solid #393535; padding: 8px; }
+nav { margin-top: 24px; }
