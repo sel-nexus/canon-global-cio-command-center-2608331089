@@ -1,6 +1,6 @@
-# Canon Global CIO Command Center — identity, strategic, regional, business and operations slices
+# Canon Global CIO Command Center — executive dashboard
 
-This repository currently implements account registration, login, verified profile restoration, logout, Strategic Command, Executive Summary regional comparison, Business Impact and Operations. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
+This repository currently implements account registration, login, verified profile restoration, logout, Strategic Command, Executive Summary regional comparison, Business Impact, Operations, Risk & Governance and Innovation. Other executive views are not yet included. Registration is currently open; enterprise registration approval and the role-permission matrix remain decisions for deployment owners. New accounts have the `executive` role and an empty permissions list; no authorization grants are inferred.
 
 ## Local development
 
@@ -42,6 +42,14 @@ Apply `alembic upgrade head`. No incidents or history are seeded. An authorized 
 Authenticated `GET /api/v1/operations/incidents?limit=20&offset=0` returns the newest incident page and total; `limit` is 1–100 and `offset` is nonnegative. `GET /api/v1/operations/summary?limit=30` returns the newest supplied history in chronological order (maximum 100), its total, latest observation, and counts of stored Open or Investigating P1/P2/P3 incidents. Counts are null when there are no incident records; zero otherwise means no matching stored active incidents, not proof that ingestion is complete. A missing latest field remains null, not the previous value or zero. History is shown as supplied, without interpolating missing dates. The chart compares per-day incident volume, P1/P2 volume and resolution counts on separate axes.
 
 Run operations backend tests with `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_operations.py` in `backend`. They migrate and truncate operations records, users and sessions in a disposable PostgreSQL test database; never use valuable data or run tests concurrently against the same database. The operations browser journey requires a separate disposable running application database with at least one incident and one history row and creates a real test user.
+
+## Risk and innovation data
+
+Apply `alembic upgrade head`; no governance data is seeded. An authorized data owner can load `governance_risk_observations` with a unique `recorded_date`, optional `compliance_pct` (0–100), `nist_maturity` and `privacy_audit_status`. The latter two are source-provided text; their scales and definitions are not inferred. The authenticated `GET /api/v1/governance/risk-overview` returns the latest dated record, or `latest: null` when none exists. Fields missing from that record are not filled from older records.
+
+Load `innovation_quarters` with unique `year` and `quarter` (1–4), optional nonnegative `deployed_models` and `patent_disclosures`, and optional source-defined `innovation_index`. Load `innovation_portfolio` with unique year, quarter and category (`GenAI`, `Cloud Migration`, `Edge Computing`, `Automation`), nonnegative `amount` and a nonempty source `unit`. Update `updated_at` when importing changes. The authenticated `GET /api/v1/governance/innovation` returns the latest outcome quarter and all supplied categories from the latest portfolio quarter independently; their periods may differ. Missing categories are not assumed to be zero. Amounts are not combined across units. Data ownership, ingestion, measurement definitions and completeness remain decisions for stakeholders.
+
+Run `TEST_DATABASE_URL=... PYTHONPATH=. $HOME/venvs/app/bin/python -m pytest -q tests/test_governance.py` from `backend`. The test migrates and truncates governance records, users and sessions in a disposable PostgreSQL database; never use valuable data or run tests concurrently on the same database. The browser spec requires a separate running application database containing risk, innovation outcome and portfolio records, and creates a test user.
 
 ## API and security
 

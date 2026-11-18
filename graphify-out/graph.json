@@ -14,7 +14,7 @@
       "label": "run_migrations_offline()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -24,7 +24,7 @@
       "label": "run_migrations_online()",
       "file_type": "code",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -39,19 +39,19 @@
       "community": 2
     },
     {
-      "id": "backend_alembic_env_rationale_18",
+      "id": "backend_alembic_env_rationale_19",
       "label": "Render SQL without opening a database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast"
     },
     {
-      "id": "backend_alembic_env_rationale_25",
+      "id": "backend_alembic_env_rationale_26",
       "label": "Apply migrations using a temporary database connection.",
       "file_type": "rationale",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast"
     },
     {
@@ -225,6 +225,48 @@
       "file_type": "rationale",
       "source_file": "backend/alembic/versions/004_business.py",
       "source_location": "L31",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_005_operations",
+      "label": "005_operations.py",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_005_operations_upgrade",
+      "label": "upgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_005_operations_downgrade",
+      "label": "downgrade()",
+      "file_type": "code",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L50",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_005_operations_rationale_12",
+      "label": "Create operations tables with source integrity constraints.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_alembic_versions_005_operations_rationale_51",
+      "label": "Remove operations tables.",
+      "file_type": "rationale",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L51",
       "_origin": "ast"
     },
     {
@@ -523,7 +565,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L20",
+      "source_location": "L22",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -538,11 +580,11 @@
       "community": 1
     },
     {
-      "id": "backend_app_main_rationale_21",
+      "id": "backend_app_main_rationale_23",
       "label": "Report process liveness independently of database availability.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L23",
       "_origin": "ast"
     },
     {
@@ -577,6 +619,58 @@
       "file_type": "rationale",
       "source_file": "backend/app/models/business.py",
       "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_operations",
+      "label": "operations.py",
+      "file_type": "code",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_operations_incident",
+      "label": "Incident",
+      "file_type": "code",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_operations_operationshistory",
+      "label": "OperationsHistory",
+      "file_type": "code",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L32",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_operations_rationale_1",
+      "label": "Persist incidents and independently supplied operational observations.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_operations_rationale_12",
+      "label": "Store an incident with its source status and optional resolution details.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_models_operations_rationale_33",
+      "label": "Store source-defined daily reporting observations without inferring KPIs.",
+      "file_type": "rationale",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L33",
       "_origin": "ast"
     },
     {
@@ -947,7 +1041,7 @@
       "_origin": "ast"
     },
     {
-      "id": "ge",
+      "id": "backend_app_routers_business_py_ge",
       "label": "ge",
       "file_type": "code",
       "source_file": "",
@@ -955,7 +1049,7 @@
       "_origin": "ast"
     },
     {
-      "id": "le",
+      "id": "backend_app_routers_business_py_le",
       "label": "le",
       "file_type": "code",
       "source_file": "",
@@ -976,6 +1070,104 @@
       "file_type": "rationale",
       "source_file": "backend/app/routers/business.py",
       "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations",
+      "label": "operations.py",
+      "file_type": "code",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_py_get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_incidents",
+      "label": "incidents()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_py_depends",
+      "label": "Depends",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_py_query",
+      "label": "Query",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_py_ge",
+      "label": "ge",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_py_le",
+      "label": "le",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_summary",
+      "label": "summary()",
+      "file_type": "code",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_rationale_1",
+      "label": "Expose authenticated incident and operations observations.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_rationale_17",
+      "label": "Return a bounded page of stored incidents.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_routers_operations_rationale_23",
+      "label": "Return active severity counts and source-provided history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L23",
       "_origin": "ast"
     },
     {
@@ -1356,6 +1548,102 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_app_schemas_operations",
+      "label": "operations.py",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_incidentrecord",
+      "label": "IncidentRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_py_basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_incidentresponse",
+      "label": "IncidentResponse",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L21",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_historyrecord",
+      "label": "HistoryRecord",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L27",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_operationssummary",
+      "label": "OperationsSummary",
+      "file_type": "code",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L41",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_rationale_1",
+      "label": "Describe incident listings and supplied operations history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_rationale_10",
+      "label": "Expose a persisted incident.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_rationale_22",
+      "label": "Return a bounded incident page and its total.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_rationale_28",
+      "label": "Expose source measures for one reporting day.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_schemas_operations_rationale_42",
+      "label": "Return active counts and independently reported chronological history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L42",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_schemas_regional",
       "label": "regional.py",
       "file_type": "code",
@@ -1635,6 +1923,64 @@
       "file_type": "rationale",
       "source_file": "backend/app/services/business.py",
       "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_operations",
+      "label": "operations.py",
+      "file_type": "code",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_operations_incidents_data",
+      "label": "incidents_data()",
+      "file_type": "code",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_operations_py_session",
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_operations_summary_data",
+      "label": "summary_data()",
+      "file_type": "code",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_operations_rationale_1",
+      "label": "Read persisted operational observations and active incident counts.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_operations_rationale_10",
+      "label": "Return a deterministic newest-first incident page.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_services_operations_rationale_17",
+      "label": "Return counts over all stored incidents and recent supplied history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L17",
       "_origin": "ast"
     },
     {
@@ -2033,6 +2379,125 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_operations",
+      "label": "test_operations.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_py_fixture",
+      "label": "fixture",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_context",
+      "label": "context()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L22",
+      "_py_fixture": "?",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_context_override",
+      "label": "override()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_login",
+      "label": "login()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L47",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_test_auth_empty_and_revocation",
+      "label": "test_auth_empty_and_revocation()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L55",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "label": "test_stored_data_counts_history_and_pagination()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L70",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_test_database_constraints",
+      "label": "test_database_constraints()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L107",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_rationale_1",
+      "label": "Exercise authenticated operations against a disposable PostgreSQL database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_rationale_23",
+      "label": "Migrate and isolate the explicitly selected test database.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_rationale_48",
+      "label": "Create and authenticate a user through the real identity API.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L48",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_rationale_56",
+      "label": "Reject invalid sessions and distinguish absent data from zero.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L56",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_rationale_71",
+      "label": "Expose committed values without deriving source metrics or filling gaps.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L71",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_operations_rationale_108",
+      "label": "Reject duplicate, invalid, inconsistent, and out-of-range observations.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L108",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_regional",
       "label": "test_regional.py",
       "file_type": "code",
@@ -2318,6 +2783,14 @@
       "label": "business.spec.js",
       "file_type": "code",
       "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_operations_spec",
+      "label": "operations.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/operations.spec.js",
       "source_location": "L1",
       "_origin": "ast"
     },
@@ -2761,7 +3234,7 @@
       "label": "Account()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2771,7 +3244,7 @@
       "label": "signOut()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2781,7 +3254,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -2955,6 +3428,55 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_dashboard_operations",
+      "label": "Operations.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_operations_operations",
+      "label": "Operations()",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_operations_test",
+      "label": "operations.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_operations_test_empty",
+      "label": "empty",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_operations_test_incidents",
+      "label": "incidents",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_dashboard_operations_test_row",
+      "label": "row",
+      "file_type": "code",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_dashboard_regional",
       "label": "Regional.jsx",
       "file_type": "code",
@@ -3086,7 +3608,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3096,7 +3618,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3111,22 +3633,22 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_18",
+      "source": "backend_alembic_env_rationale_19",
       "target": "backend_alembic_env_run_migrations_offline",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_alembic_env_rationale_25",
+      "source": "backend_alembic_env_rationale_26",
       "target": "backend_alembic_env_run_migrations_online",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/env.py",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3287,6 +3809,46 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/alembic/versions/004_business.py",
       "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_005_operations",
+      "target": "backend_alembic_versions_005_operations_upgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_005_operations",
+      "target": "backend_alembic_versions_005_operations_downgrade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_005_operations_rationale_12",
+      "target": "backend_alembic_versions_005_operations_upgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_alembic_versions_005_operations_rationale_51",
+      "target": "backend_alembic_versions_005_operations_downgrade",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/versions/005_operations.py",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3653,12 +4215,23 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_main",
+      "target": "backend_app_routers_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_main_health",
       "target": "backend_app_main_py_get",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -3669,7 +4242,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3684,12 +4257,12 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_21",
+      "source": "backend_app_main_rationale_23",
       "target": "backend_app_main_health",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3752,6 +4325,98 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/models/business.py",
       "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations",
+      "target": "backend_app_models_operations_incident",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations_incident",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations_operationshistory",
+      "target": "backend_app_core_database_base",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations_rationale_1",
+      "target": "backend_app_models_operations",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations_rationale_12",
+      "target": "backend_app_models_operations_incident",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations_rationale_33",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4552,7 +5217,7 @@
     },
     {
       "source": "backend_app_routers_business_impact",
-      "target": "ge",
+      "target": "backend_app_routers_business_py_ge",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
@@ -4563,7 +5228,7 @@
     },
     {
       "source": "backend_app_routers_business_impact",
-      "target": "le",
+      "target": "backend_app_routers_business_py_le",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
@@ -4600,6 +5265,276 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/routers/business.py",
       "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_routers_auth",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_schemas_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_services_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_routers_operations_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_routers_operations_incidents",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_routers_operations_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_routers_operations_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_routers_operations_py_query",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_routers_operations_py_ge",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_routers_operations_py_le",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_routers_operations_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_routers_operations_py_session",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_routers_operations_py_depends",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_core_database_get_db",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_routers_operations_py_query",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_routers_operations_py_ge",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_routers_operations_py_le",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_rationale_1",
+      "target": "backend_app_routers_operations",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_rationale_17",
+      "target": "backend_app_routers_operations_incidents",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_rationale_23",
+      "target": "backend_app_routers_operations_summary",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5285,6 +6220,147 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_schemas_operations",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations",
+      "target": "backend_app_schemas_operations_incidentrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_incidentrecord",
+      "target": "backend_app_schemas_operations_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_incidentresponse",
+      "target": "backend_app_schemas_operations_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations",
+      "target": "backend_app_schemas_operations_historyrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_historyrecord",
+      "target": "backend_app_schemas_operations_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_operationssummary",
+      "target": "backend_app_schemas_operations_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_rationale_1",
+      "target": "backend_app_schemas_operations",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_rationale_10",
+      "target": "backend_app_schemas_operations_incidentrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_rationale_22",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_rationale_28",
+      "target": "backend_app_schemas_operations_historyrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_schemas_operations_rationale_42",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/schemas/operations.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_schemas_regional",
       "target": "datetime",
       "relation": "imports",
@@ -5791,6 +6867,122 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/services/business.py",
       "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_models_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_schemas_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_services_operations_incidents_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_incidents_data",
+      "target": "backend_app_services_operations_py_session",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_incidents_data",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_services_operations_summary_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_summary_data",
+      "target": "backend_app_services_operations_py_session",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_summary_data",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_rationale_1",
+      "target": "backend_app_services_operations",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_rationale_10",
+      "target": "backend_app_services_operations_incidents_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_rationale_17",
+      "target": "backend_app_services_operations_summary_data",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6477,6 +7669,226 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_operations",
+      "target": "datetime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_app_core_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_app_models_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_context",
+      "target": "backend_tests_test_operations_py_fixture",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_tests_test_operations_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_context",
+      "target": "backend_tests_test_operations_context_override",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_tests_test_operations_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_tests_test_operations_test_auth_empty_and_revocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_tests_test_operations_test_database_constraints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_context",
+      "target": "backend_tests_test_operations_context_override",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_auth_empty_and_revocation",
+      "target": "backend_tests_test_operations_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "target": "backend_tests_test_operations_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_rationale_1",
+      "target": "backend_tests_test_operations",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_rationale_23",
+      "target": "backend_tests_test_operations_context",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_rationale_48",
+      "target": "backend_tests_test_operations_login",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_rationale_56",
+      "target": "backend_tests_test_operations_test_auth_empty_and_revocation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_rationale_71",
+      "target": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_rationale_108",
+      "target": "backend_tests_test_operations_test_database_constraints",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional",
       "target": "backend_app_core_config",
       "relation": "imports_from",
@@ -7007,6 +8419,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/business.spec.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_operations_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/operations.spec.js",
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast"
@@ -7612,11 +9035,22 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_account",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7626,7 +9060,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7636,7 +9070,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7647,7 +9081,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L56",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8181,6 +9615,189 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_dashboard_operations",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations",
+      "target": "ref_chart_js",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations",
+      "target": "ref_react_chartjs_2",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations",
+      "target": "frontend_src_dashboard_operations_operations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/Operations.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "ref_testing_library_jest_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "frontend_src_dashboard_operations",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "frontend_src_api_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "frontend_src_api_client_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "frontend_src_dashboard_operations_test_empty",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "frontend_src_dashboard_operations_test_incidents",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "frontend_src_dashboard_operations_test_row",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_dashboard_regional",
       "target": "ref_react",
       "relation": "imports_from",
@@ -8681,6 +10298,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_dashboard_operations_operations",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_auth_auth_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -8698,6 +10326,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/dashboard/business.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_dashboard_operations_test",
+      "target": "frontend_src_dashboard_operations_operations",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/dashboard/operations.test.jsx",
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast"
@@ -8753,6 +10392,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/models/business.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations",
+      "target": "backend_app_core_database_base",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/models/operations.py",
       "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
@@ -8907,6 +10557,72 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/routers/business.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_routers_auth_current_session",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_services_operations_incidents_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations",
+      "target": "backend_app_services_operations_summary_data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/operations.py",
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
@@ -9110,6 +10826,72 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_models_operations_incident",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_schemas_operations_historyrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_schemas_operations_incidentrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_regional",
       "target": "backend_app_models_regional_regionalperformance",
       "relation": "imports",
@@ -9286,6 +11068,39 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_operations",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_app_models_operations_incident",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional",
       "target": "backend_app_core_database_get_db",
       "relation": "imports",
@@ -9407,6 +11222,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_alembic_env",
+      "target": "backend_app_models_operations",
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/alembic/env.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_auth",
       "target": "backend_app_services_auth",
       "relation": "imports_from",
@@ -9435,7 +11261,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9539,6 +11365,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_services_operations_incidents_data",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_summary_data",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_services_regional_regional_data",
       "target": "backend_app_schemas_regional_regionalresponse",
       "relation": "calls",
@@ -9612,6 +11460,50 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_business.py",
       "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "target": "backend_app_models_operations_incident",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_database_constraints",
+      "target": "backend_app_models_operations_incident",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_database_constraints",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L112",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9711,6 +11603,28 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/models/business.py",
       "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations_incident",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_models_operations_operationshistory",
+      "target": "backend_app_core_database_base",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/models/operations.py",
+      "source_location": "L32",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -9902,6 +11816,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L16",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L22",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_regional_regional_radar",
       "target": "backend_app_schemas_regional_regionalresponse",
       "relation": "uses",
@@ -10041,6 +11977,83 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/services/business.py",
       "source_location": "L9",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_incidents_data",
+      "target": "backend_app_models_operations_incident",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_summary_data",
+      "target": "backend_app_models_operations_incident",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L18",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_summary_data",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L24",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_summary_data",
+      "target": "backend_app_schemas_operations_historyrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L25",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_incidents_data",
+      "target": "backend_app_schemas_operations_incidentrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L13",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_incidents_data",
+      "target": "backend_app_schemas_operations_incidentresponse",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_services_operations_summary_data",
+      "target": "backend_app_schemas_operations_operationssummary",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/services/operations.py",
+      "source_location": "L16",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -10199,6 +12212,50 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "target": "backend_app_models_operations_incident",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L77",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_database_constraints",
+      "target": "backend_app_models_operations_incident",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L111",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_stored_data_counts_history_and_pagination",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L81",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_operations_test_database_constraints",
+      "target": "backend_app_models_operations_operationshistory",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_operations.py",
+      "source_location": "L112",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_regional_record",
       "target": "backend_app_models_regional_regionalperformance",
       "relation": "uses",
@@ -10288,6 +12345,30 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_routers_operations_incidents",
+      "target": "backend_app_services_operations_incidents_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_routers_operations_summary",
+      "target": "backend_app_services_operations_summary_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/routers/operations.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_routers_regional_regional_radar",
       "target": "backend_app_services_regional_regional_data",
       "relation": "calls",
@@ -10319,7 +12400,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10331,7 +12412,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_account",
+      "target": "frontend_src_dashboard_operations_operations",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10343,7 +12436,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10355,7 +12448,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10367,7 +12460,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10379,7 +12472,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L54",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10391,7 +12484,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L55",
+      "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -10421,6 +12514,32 @@
     },
     {
       "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_regional_regional_performance",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_core_database_get_db",
+      "_tgt": "backend_app_routers_regional_regional_performance"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
+      "target": "backend_app_routers_regional_regional_radar",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/regional.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_core_database_get_db",
+      "_tgt": "backend_app_routers_regional_regional_radar"
+    },
+    {
+      "source": "backend_app_core_database_get_db",
       "target": "backend_app_routers_strategic_export_strategic",
       "relation": "references",
       "context": "generic_arg",
@@ -10447,28 +12566,15 @@
     },
     {
       "source": "backend_app_core_database_get_db",
-      "target": "backend_app_routers_regional_regional_performance",
+      "target": "backend_app_routers_business_impact",
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
-      "source_file": "backend/app/routers/regional.py",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_origin": "ast",
-      "_src": "backend_app_routers_regional_regional_performance",
-      "_tgt": "backend_app_core_database_get_db"
-    },
-    {
-      "source": "backend_app_core_database_get_db",
-      "target": "backend_app_routers_regional_regional_radar",
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/routers/regional.py",
+      "source_file": "backend/app/routers/business.py",
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_regional_regional_radar",
+      "_src": "backend_app_routers_business_impact",
       "_tgt": "backend_app_core_database_get_db"
     },
     {
@@ -10490,7 +12596,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -10643,6 +12749,19 @@
       "_tgt": "backend_app_routers_auth_py_get"
     },
     {
+      "source": "backend_app_routers_business_py_get",
+      "target": "backend_app_routers_business_impact",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/routers/business.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_routers_business_impact",
+      "_tgt": "backend_app_routers_business_py_get"
+    },
+    {
       "source": "backend_app_routers_regional_py_get",
       "target": "backend_app_routers_regional_regional_performance",
       "relation": "references",
@@ -10652,8 +12771,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_routers_regional_regional_performance",
-      "_tgt": "backend_app_routers_regional_py_get"
+      "_src": "backend_app_routers_regional_py_get",
+      "_tgt": "backend_app_routers_regional_regional_performance"
     },
     {
       "source": "backend_app_routers_regional_py_get",
@@ -10665,8 +12784,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_routers_regional_regional_radar",
-      "_tgt": "backend_app_routers_regional_py_get"
+      "_src": "backend_app_routers_regional_py_get",
+      "_tgt": "backend_app_routers_regional_regional_radar"
     },
     {
       "source": "backend_app_routers_regional_py_session",
@@ -10678,8 +12797,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_regional_regional_performance",
-      "_tgt": "backend_app_routers_regional_py_session"
+      "_src": "backend_app_routers_regional_py_session",
+      "_tgt": "backend_app_routers_regional_regional_performance"
     },
     {
       "source": "backend_app_routers_regional_py_depends",
@@ -10691,8 +12810,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_routers_regional_regional_performance",
-      "_tgt": "backend_app_routers_regional_py_depends"
+      "_src": "backend_app_routers_regional_py_depends",
+      "_tgt": "backend_app_routers_regional_regional_performance"
     },
     {
       "source": "backend_app_routers_strategic_py_get",
@@ -10838,6 +12957,19 @@
       "_tgt": "parametrize"
     },
     {
+      "source": "backend_tests_test_business_py_fixture",
+      "target": "backend_tests_test_business_context",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_business.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_business_context",
+      "_tgt": "backend_tests_test_business_py_fixture"
+    },
+    {
       "source": "backend_tests_test_regional_py_fixture",
       "target": "backend_tests_test_regional_context",
       "relation": "references",
@@ -10865,10 +12997,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-18T09:06:49.041702+00:00",
+    "built_at": "2026-11-18T09:11:34.446289+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000418112608331089\\developer",
     "force": true,
-    "files_scanned": 50
+    "files_scanned": 59
   }
 }

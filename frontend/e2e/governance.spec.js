@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('executive sees persisted risk and innovation observations', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+  const username = `governance${Date.now()}${Math.floor(Math.random() * 10000)}`;
+  await page.goto('/register');
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Email').fill(`${username}@example.com`);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Create account' }).click();
+  await expect(page.getByRole('status')).toContainText('Account created');
+  await page.getByRole('link', { name: 'Sign in' }).click();
+  await page.getByLabel('Username').fill(username);
+  await page.getByLabel('Password').fill('password123');
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  const riskResponse = page.waitForResponse((response) => response.url().includes('/governance/risk-overview') && response.status() === 200);
+  await page.getByRole('link', { name: 'Risk & Governance' }).click();
+  const risk = (await (await riskResponse).json()).latest;
+  expect(risk, 'A persisted risk assessment is required').not.toBeNull();
+  await expect(page.getByRole('heading', { name: 'Global Regulatory Compliance Score' }).locator('..')).toContainText(risk.compliance_pct == null ? 'Not provided' : `${risk.compliance_pct}%`);
+  await expect(page.getByRole('heading', { name: 'Cybersecurity Maturity (NIST)' }).locator('..')).toContainText(risk.nist_maturity ?? 'Not provided');
+  await expect(page.getByRole('heading', { name: 'Data Privacy Audit Status' }).locator('..')).toContainText(risk.privacy_audit_status ?? 'Not provided');
+  const innovationResponse = page.waitForResponse((response) => response.url().includes('/governance/innovation') && response.status() === 200);
+  await page.getByRole('link', { name: 'Innovation' }).click();
+  const innovation = await (await innovationResponse).json();
+  expect(innovation.latest, 'Persisted innovation outcomes are required').not.toBeNull();
+  expect(innovation.portfolio.length, 'A persisted portfolio row is required').toBeGreaterThan(0);
+  await expect(page.getByRole('heading', { name: 'Quarterly innovation index' }).locator('..')).toContainText(String(innovation.latest.innovation_index ?? 'Not provided'));
+  const row = innovation.portfolio[0];
+  const portfolioRow = page.getByRole('row', { name: new RegExp(row.category) });
+  await expect(portfolioRow).toContainText(row.amount);
+  await expect(portfolioRow).toContainText(row.unit);
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Innovation', exact: true })).toBeVisible();
+  expect(errors).toEqual([]);
+});
