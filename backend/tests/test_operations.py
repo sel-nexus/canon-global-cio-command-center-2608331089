@@ -1,47 +1,17 @@
 """Exercise authenticated operations against a disposable PostgreSQL database."""
 import datetime
-import os
 from decimal import Decimal
 
 import pytest
-from alembic import command
-from alembic.config import Config
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import make_url
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.orm import sessionmaker
 
-from app.core.config import settings
-from app.core.database import get_db
-from app.main import app
 from app.models.operations import Incident, OperationsHistory
 
 
 @pytest.fixture()
-def context():
-    """Migrate and isolate the explicitly selected test database."""
-    url = make_url(os.environ['TEST_DATABASE_URL'])
-    if not url.drivername.startswith('postgresql') or not url.database or 'test' not in url.database.lower() or url == settings.application_url:
-        raise RuntimeError('TEST_DATABASE_URL must name a separate PostgreSQL test database')
-    config = Config('alembic.ini')
-    config.attributes['database_url'] = url
-    command.upgrade(config, 'head')
-    engine = create_engine(url)
-    with engine.begin() as connection:
-        connection.execute(text('TRUNCATE operations_history, operations_incidents, auth_sessions, users RESTART IDENTITY CASCADE'))
-    factory = sessionmaker(bind=engine, expire_on_commit=False)
-
-    def override():
-        """Yield a test database session."""
-        with factory() as db:
-            yield db
-
-    app.dependency_overrides[get_db] = override
-    with TestClient(app) as client:
-        yield client, factory
-    app.dependency_overrides.clear()
-    engine.dispose()
+def context(isolated_context):
+    """Use the per-test isolated PostgreSQL schema."""
+    return isolated_context
 
 
 def login(client):
@@ -60,8 +30,11 @@ def test_auth_empty_and_revocation(context):
         assert client.get(path).status_code == 401
         assert client.get(path, headers={'Authorization': 'Bearer forged'}).status_code == 401
     headers = login(client)
-    assert client.get(paths[0], headers=headers).json() == {'incidents': [], 'total': 0}
-    assert client.get(paths[1], headers=headers).json() == {'active_counts': None, 'latest': None, 'history': [], 'history_total': 0}
+    incidents = client.get(paths[0], headers=headers)
+    summary = client.get(paths[1], headers=headers)
+    assert incidents.status_code == summary.status_code == 200
+    assert incidents.json() == {'incidents': [], 'total': 0}
+    assert summary.json() == {'active_counts': None, 'latest': None, 'history': [], 'history_total': 0}
     assert client.post('/api/v1/auth/logout', headers=headers).status_code == 204
     for path in paths:
         assert client.get(path, headers=headers).status_code == 401
@@ -93,15 +66,21 @@ def test_stored_data_counts_history_and_pagination(context):
     assert result['history'][0]['uptime_pct'] == '99.99'
     assert result['history'][0]['resolution_count'] == 2
     assert result['latest']['mttr_minutes'] is None and result['latest']['incident_volume'] == 0
-    assert client.get('/api/v1/operations/summary?limit=1', headers=headers).json()['history'] == [result['latest']]
-    page = client.get('/api/v1/operations/incidents?limit=2&offset=1', headers=headers).json()
+    limited = client.get('/api/v1/operations/summary?limit=1', headers=headers)
+    assert limited.status_code == 200
+    assert limited.json()['history'] == [result['latest']]
+    page_response = client.get('/api/v1/operations/incidents?limit=2&offset=1', headers=headers)
+    assert page_response.status_code == 200
+    page = page_response.json()
     assert page['total'] == 4 and [i['incident_number'] for i in page['incidents']] == ['I3', 'I2']
     for path in ['/api/v1/operations/incidents?limit=0', '/api/v1/operations/incidents?offset=-1', '/api/v1/operations/summary?limit=101']:
         assert client.get(path, headers=headers).status_code == 422
     with factory() as db:
         db.get(Incident, 1).status = 'Investigating'
         db.commit()
-    assert client.get('/api/v1/operations/incidents', headers=headers).json()['incidents'][-1]['status'] == 'Investigating'
+    updated = client.get('/api/v1/operations/incidents', headers=headers)
+    assert updated.status_code == 200
+    assert updated.json()['incidents'][-1]['status'] == 'Investigating'
 
 
 def test_database_constraints(context):

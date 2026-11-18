@@ -1,47 +1,18 @@
 """Verify regional API and constraints against a disposable PostgreSQL database."""
-import os
 from decimal import Decimal
 
 import pytest
-from alembic import command
-from alembic.config import Config
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import make_url
+from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.orm import sessionmaker
 
-from app.core.config import settings
-from app.core.database import get_db
-from app.main import app
 from app.models.regional import RegionalPerformance
 from app.services.regional import regional_data
 
 
 @pytest.fixture()
-def context():
-    """Migrate and reset only a separate explicitly named test database."""
-    url = make_url(os.environ['TEST_DATABASE_URL'])
-    if not url.drivername.startswith('postgresql') or not url.database or 'test' not in url.database.lower() or url == settings.application_url:
-        raise RuntimeError('TEST_DATABASE_URL must name a separate PostgreSQL test database')
-    config = Config('alembic.ini')
-    config.attributes['database_url'] = url
-    command.upgrade(config, 'head')
-    engine = create_engine(url)
-    with engine.begin() as connection:
-        connection.execute(text('TRUNCATE regional_performance, auth_sessions, users RESTART IDENTITY CASCADE'))
-    factory = sessionmaker(bind=engine, expire_on_commit=False)
-
-    def override():
-        """Supply a session bound to the test database."""
-        with factory() as db:
-            yield db
-
-    app.dependency_overrides[get_db] = override
-    with TestClient(app) as client:
-        yield client, factory
-    app.dependency_overrides.clear()
-    engine.dispose()
+def context(isolated_context):
+    """Use the per-test isolated PostgreSQL schema."""
+    return isolated_context
 
 
 def login(client):
@@ -67,7 +38,9 @@ def test_auth_empty_and_revocation(context):
         assert client.get(path, headers={'Authorization': 'Bearer forged'}).status_code == 401
     headers = login(client)
     for path in paths:
-        assert client.get(path, headers=headers).json() == {'regions': []}
+        response = client.get(path, headers=headers)
+        assert response.status_code == 200
+        assert response.json() == {'regions': []}
     with factory() as db:
         assert regional_data(db).regions == []
     assert client.post('/api/v1/auth/logout', headers=headers).status_code == 204
@@ -96,7 +69,9 @@ def test_persisted_values_and_updates(context):
         row = db.get(RegionalPerformance, 1)
         row.status = 'Critical'
         db.commit()
-    assert client.get(paths[1], headers=headers).json()['regions'][1]['status'] == 'Critical'
+    response = client.get(paths[1], headers=headers)
+    assert response.status_code == 200
+    assert response.json()['regions'][1]['status'] == 'Critical'
 
 
 def test_constraints(context):
@@ -110,3 +85,22 @@ def test_constraints(context):
             with pytest.raises(IntegrityError):
                 db.commit()
             db.rollback()
+
+
+def test_not_null_violation_rolls_back_regional_transaction(context):
+    """Reject a null status and roll back an earlier uncommitted region."""
+    _, factory = context
+    with factory() as db:
+        db.add(record('Committed', 'Good'))
+        db.commit()
+        db.add(record('Pending', 'Good'))
+        db.flush()
+        db.add(record('Invalid', None))
+        with pytest.raises(IntegrityError) as error:
+            db.flush()
+        assert error.value.orig.sqlstate == '23502'
+        assert error.value.orig.diag.column_name == 'status'
+        db.rollback()
+
+        regions = db.execute(text('SELECT region FROM regional_performance ORDER BY region')).scalars().all()
+        assert regions == ['Committed']

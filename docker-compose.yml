@@ -6,7 +6,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-canon-dev-only}
       POSTGRES_DB: ${DB_NAME:-canon_cio}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -22,11 +22,16 @@ services:
       JWT_SECRET: ${JWT_SECRET:-dev-secret-change-in-production-at-least-32-characters}
       ACCESS_TOKEN_MINUTES: ${ACCESS_TOKEN_MINUTES:-60}
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
+      AI_MOCK_ENABLED: ${AI_MOCK_ENABLED:-false}
+      AI_ENABLED: ${AI_ENABLED:-false}
+      AI_ENDPOINT: ${AI_ENDPOINT:-https://example.com/v1/chat/completions}
+      AI_MODEL: ${AI_MODEL:-example-model}
+      AI_API_KEY: ${AI_API_KEY:-example-key}
     depends_on:
       db:
         condition: service_healthy
     ports:
-      - "8000:8000"
+      - "${BACKEND_PORT:-8000}:8000"
   frontend:
     build: ./frontend
     depends_on:

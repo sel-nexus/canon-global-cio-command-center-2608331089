@@ -38,7 +38,8 @@ class Analysis(BaseModel):
 
 
 class ChatResponse(Analysis):
-    """Include limitations independently of the provider output."""
+    """Identify the response source and include independent limitations."""
+    source: Literal['provider', 'mock']
     limitations: list[str]
 
 

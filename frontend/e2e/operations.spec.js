@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
+import { captureErrors, registerAndLogin } from './fixtures.js';
 
-test('executive sees persisted incidents and operations history', async ({ page }) => {
+test('executive sees persisted incidents and operations history', async ({ page }, testInfo) => {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
@@ -22,14 +23,63 @@ test('executive sees persisted incidents and operations history', async ({ page 
   const incidents = await (await incidentsResponse).json();
   expect(summary.history.length, 'A persisted history row is required').toBeGreaterThan(0);
   expect(incidents.incidents.length, 'A persisted incident is required').toBeGreaterThan(0);
-  await expect(page.getByRole('heading', { name: 'Operations' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Operations', exact: true })).toBeVisible();
   await expect(page.getByRole('img', { name: 'Incident volume and resolution history' })).toBeVisible();
   const latest = summary.history.at(-1);
-  const row = page.getByRole('row', { name: new RegExp(latest.recorded_date) });
+  const row = page.getByRole('table', { name: 'Source-reported incident history' }).getByRole('row', { name: new RegExp(latest.recorded_date) });
   await expect(row).toContainText(String(latest.incident_volume ?? 'Not provided'));
   await expect(row).toContainText(String(latest.resolution_count ?? 'Not provided'));
   await expect(page.getByRole('row', { name: new RegExp(incidents.incidents[0].incident_number) })).toContainText(incidents.incidents[0].title);
+  await page.screenshot({ path: testInfo.outputPath('operations-desktop.png'), fullPage: true });
   await page.reload();
-  await expect(page.getByRole('heading', { name: 'Operations' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Operations', exact: true })).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('mobile user navigates to real operations data and restores it on reload', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  const errors = captureErrors(page);
+  await registerAndLogin(page, 'mobile');
+  const responsePromise = page.waitForResponse((response) => response.url().includes('/operations/incidents') && response.request().method() === 'GET');
+  await page.getByRole('link', { name: 'Operations' }).click();
+  const response = await responsePromise;
+  expect(response.status()).toBe(200);
+  const data = await response.json();
+  expect(data.incidents.length, 'A persisted incident is required').toBeGreaterThan(0);
+  const incident = data.incidents[0];
+  const row = page.getByRole('row').filter({ hasText: incident.incident_number });
+  await expect(row).toContainText(incident.title);
+  await expect(page.getByRole('link', { name: 'Operations' })).toHaveAttribute('aria-current', 'page');
+  await page.screenshot({ path: testInfo.outputPath('operations-mobile.png'), fullPage: true });
+  const reloaded = page.waitForResponse((res) => res.url().includes('/operations/incidents') && res.request().method() === 'GET');
+  await page.reload();
+  expect((await reloaded).status()).toBe(200);
+  await expect(row).toContainText(incident.title);
+  expect(errors).toEqual([]);
+});
+
+test('stored incident markup is displayed as text and never executes', async ({ page }) => {
+  const errors = captureErrors(page);
+  const payload = '<img src=x onerror="window.__e2eStoredXss=1">';
+  await page.addInitScript(() => { window.__e2eStoredXss = 0; });
+  await registerAndLogin(page, 'storedxss');
+  const responsePromise = page.waitForResponse((response) => response.url().includes('/operations/incidents') && response.request().method() === 'GET');
+  await page.getByRole('link', { name: 'Operations' }).click();
+  const response = await responsePromise;
+  expect(response.status()).toBe(200);
+  const data = await response.json();
+  const incident = data.incidents.find((item) => item.incident_number === 'E2E-XSS');
+  expect(incident, 'Load the real E2E-XSS incident fixture described in e2e/fixtures.js').toBeTruthy();
+  expect(incident.title).toBe(payload);
+  const row = page.getByRole('row').filter({ hasText: 'E2E-XSS' });
+  await expect(row.getByRole('cell').first()).toHaveText(payload);
+  await expect(row.locator('img, script')).toHaveCount(0);
+  expect(await page.evaluate(() => window.__e2eStoredXss)).toBe(0);
+  const reloaded = page.waitForResponse((res) => res.url().includes('/operations/incidents') && res.request().method() === 'GET');
+  await page.reload();
+  expect((await reloaded).status()).toBe(200);
+  await expect(row.getByRole('cell').first()).toHaveText(payload);
+  await expect(row.locator('img, script')).toHaveCount(0);
+  expect(await page.evaluate(() => window.__e2eStoredXss)).toBe(0);
   expect(errors).toEqual([]);
 });

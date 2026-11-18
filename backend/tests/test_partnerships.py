@@ -1,48 +1,17 @@
 """Exercise supplier data and authentication against disposable PostgreSQL."""
-import os
 from decimal import Decimal
 
 import pytest
-from alembic import command
-from alembic.config import Config
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import make_url
+from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.orm import sessionmaker
 
-from app.core.config import settings
-from app.core.database import get_db
-from app.main import app
 from app.models.partnerships import PartnerPerformance, PartnerQuarter
 
 
 @pytest.fixture()
-def context():
-    """Migrate and isolate the selected disposable test database."""
-    url = make_url(os.environ['TEST_DATABASE_URL'])
-    if not url.drivername.startswith('postgresql') or not url.database or 'test' not in url.database.lower() or url == settings.application_url:
-        raise RuntimeError('TEST_DATABASE_URL must name a separate PostgreSQL test database')
-    config = Config('alembic.ini')
-    config.attributes['database_url'] = url
-    command.upgrade(config, 'head')
-    engine = create_engine(url)
-    with engine.begin() as connection:
-        connection.execute(text('TRUNCATE partner_quarters, partner_performance, auth_sessions, users RESTART IDENTITY CASCADE'))
-    factory = sessionmaker(bind=engine, expire_on_commit=False)
-
-    def override():
-        """Yield a database session for the test client."""
-        with factory() as db:
-            yield db
-
-    app.dependency_overrides[get_db] = override
-    try:
-        with TestClient(app) as client:
-            yield client, factory
-    finally:
-        app.dependency_overrides.clear()
-        engine.dispose()
+def context(isolated_context):
+    """Use the per-test isolated PostgreSQL schema."""
+    return isolated_context
 
 
 def login(client):
@@ -65,7 +34,9 @@ def test_auth_empty_and_session_revocation(context):
     assert client.get(path).status_code == 401
     assert client.get(path, headers={'Authorization': 'Bearer forged'}).status_code == 401
     headers = login(client)
-    assert client.get(path, headers=headers).json() == {'partners': [], 'total': 0}
+    response = client.get(path, headers=headers)
+    assert response.status_code == 200
+    assert response.json() == {'partners': [], 'total': 0}
     assert client.post('/api/v1/auth/logout', headers=headers).status_code == 204
     assert client.get(path, headers=headers).status_code == 401
 
@@ -85,7 +56,9 @@ def test_persisted_assessments_history_and_bounds(context):
             PartnerQuarter(partner_id=first.id, year=2025, quarter=2, spend=15, verified_savings=50, roi_multiple=None, currency='USD'),
         ])
         db.commit()
-    result = client.get('/api/v1/partnerships?limit=1&history_limit=2', headers=headers).json()
+    response = client.get('/api/v1/partnerships?limit=1&history_limit=2', headers=headers)
+    assert response.status_code == 200
+    result = response.json()
     assert result['total'] == 2
     row = result['partners'][0]
     assert (row['vendor_name'], row['sla_compliance_pct'], row['innovation_output'], row['delivery_score'], row['annual_spend']) == ('Supplier A', '98.25', 'Two pilots', '88.50', '1234.50')
@@ -94,13 +67,17 @@ def test_persisted_assessments_history_and_bounds(context):
     assert row['history'][0]['spend'] == '0.00' and row['history'][0]['verified_savings'] is None
     assert row['history'][0]['currency'] == 'EUR' and row['history'][0]['roi_multiple'] == '-0.25'
     assert row['history'][1]['verified_savings'] == '50.00' and row['history'][1]['roi_multiple'] is None
-    assert client.get('/api/v1/partnerships?limit=1&offset=1', headers=headers).json()['partners'][0]['history'] == []
+    response = client.get('/api/v1/partnerships?limit=1&offset=1', headers=headers)
+    assert response.status_code == 200
+    assert response.json()['partners'][0]['history'] == []
     for query in ['limit=0', 'limit=101', 'offset=-1', 'history_limit=0', 'history_limit=101']:
         assert client.get('/api/v1/partnerships?' + query, headers=headers).status_code == 422
     with factory() as db:
         db.get(PartnerPerformance, row['id']).contract_status = 'Renewed'
         db.commit()
-    assert client.get('/api/v1/partnerships', headers=headers).json()['partners'][0]['contract_status'] == 'Renewed'
+    response = client.get('/api/v1/partnerships', headers=headers)
+    assert response.status_code == 200
+    assert response.json()['partners'][0]['contract_status'] == 'Renewed'
 
 
 def test_constraints_and_cascade(context):
@@ -124,4 +101,32 @@ def test_constraints_and_cascade(context):
             db.rollback()
         db.delete(db.get(PartnerPerformance, partner_id))
         db.commit()
+        assert db.execute(text('SELECT count(*) FROM partner_quarters')).scalar_one() == 0
+
+
+@pytest.mark.parametrize('table,column', [('partner_performance', 'vendor_name'), ('partner_quarters', 'currency')])
+def test_not_null_violation_rolls_back_partner_transaction(context, table, column):
+    """PostgreSQL rejects nulls and rolls back earlier writes in the transaction."""
+    _, factory = context
+    with factory() as db:
+        existing = partner('Committed supplier')
+        db.add(existing)
+        db.commit()
+        partner_id = existing.id
+
+        db.add(partner('Pending supplier'))
+        db.flush()
+        if table == 'partner_performance':
+            invalid = partner(None)
+        else:
+            invalid = PartnerQuarter(partner_id=partner_id, year=2025, quarter=1, currency=None)
+        db.add(invalid)
+        with pytest.raises(IntegrityError) as error:
+            db.flush()
+        assert error.value.orig.sqlstate == '23502'
+        assert error.value.orig.diag.column_name == column
+        db.rollback()
+
+        names = db.execute(text('SELECT vendor_name FROM partner_performance ORDER BY vendor_name')).scalars().all()
+        assert names == ['Committed supplier']
         assert db.execute(text('SELECT count(*) FROM partner_quarters')).scalar_one() == 0

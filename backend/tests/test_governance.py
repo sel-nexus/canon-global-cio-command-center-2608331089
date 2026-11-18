@@ -1,49 +1,17 @@
 """Exercise authenticated governance against a disposable PostgreSQL database."""
 import datetime
-import os
 from decimal import Decimal
 
 import pytest
-from alembic import command
-from alembic.config import Config
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import make_url
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.orm import sessionmaker
 
-from app.core.config import settings
-from app.core.database import get_db
-from app.main import app
 from app.models.governance import InnovationPortfolio, InnovationQuarter, RiskObservation
 
 
 @pytest.fixture()
-def context():
-    """Migrate and isolate the explicitly selected test database."""
-    url = make_url(os.environ['TEST_DATABASE_URL'])
-    if not url.drivername.startswith('postgresql') or not url.database or 'test' not in url.database.lower() or url == settings.application_url:
-        raise RuntimeError('TEST_DATABASE_URL must name a separate PostgreSQL test database')
-    config = Config('alembic.ini')
-    config.attributes['database_url'] = url
-    command.upgrade(config, 'head')
-    engine = create_engine(url)
-    with engine.begin() as connection:
-        connection.execute(text('TRUNCATE governance_risk_observations, innovation_portfolio, innovation_quarters, auth_sessions, users RESTART IDENTITY CASCADE'))
-    factory = sessionmaker(bind=engine, expire_on_commit=False)
-
-    def override():
-        """Yield a session connected to the test database."""
-        with factory() as db:
-            yield db
-
-    app.dependency_overrides[get_db] = override
-    try:
-        with TestClient(app) as client:
-            yield client, factory
-    finally:
-        app.dependency_overrides.clear()
-        engine.dispose()
+def context(isolated_context):
+    """Use the per-test isolated PostgreSQL schema."""
+    return isolated_context
 
 
 def login(client):
@@ -62,8 +30,12 @@ def test_auth_empty_and_revocation(context):
         assert client.get(path).status_code == 401
         assert client.get(path, headers={'Authorization': 'Bearer forged'}).status_code == 401
     headers = login(client)
-    assert client.get(paths[0], headers=headers).json() == {'latest': None}
-    assert client.get(paths[1], headers=headers).json() == {'latest': None, 'portfolio': []}
+    risk = client.get(paths[0], headers=headers)
+    assert risk.status_code == 200
+    assert risk.json() == {'latest': None}
+    innovation = client.get(paths[1], headers=headers)
+    assert innovation.status_code == 200
+    assert innovation.json() == {'latest': None, 'portfolio': []}
     assert client.post('/api/v1/auth/logout', headers=headers).status_code == 204
     for path in paths:
         assert client.get(path, headers=headers).status_code == 401
@@ -100,7 +72,9 @@ def test_latest_persisted_values_and_missing_fields(context):
         row = db.get(RiskObservation, 2)
         row.privacy_audit_status = 'Review in progress'
         db.commit()
-    assert client.get('/api/v1/governance/risk-overview', headers=headers).json()['latest']['privacy_audit_status'] == 'Review in progress'
+    risk = client.get('/api/v1/governance/risk-overview', headers=headers)
+    assert risk.status_code == 200
+    assert risk.json()['latest']['privacy_audit_status'] == 'Review in progress'
 
 
 def test_database_constraints(context):

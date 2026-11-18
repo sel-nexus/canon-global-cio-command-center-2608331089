@@ -25,12 +25,22 @@ describe('identity screens', () => {
     vi.spyOn(api, 'post').mockImplementation((url) => url === '/auth/login'
       ? Promise.resolve({ data: { access_token: 'signed', user: { username: 'alice', email: 'alice@example.com', role: 'executive' } } })
       : Promise.resolve({}));
+    const get = vi.spyOn(api, 'get').mockImplementation((url) => {
+      if (url === '/dashboard/strategic-metrics') return Promise.resolve({ data: { window_start: '2025-01-01', window_end: '2025-12-31', metrics: [], budgets: [], trends: [], insights: [] } });
+      if (url === '/ai/recommendations') return Promise.resolve({ data: [{ label: 'Review performance', query: 'Review performance', context_tab: 'strategic' }] });
+      throw new Error(`Unexpected GET ${url}`);
+    });
     render(<App />);
     const user = userEvent.setup();
     await user.type(screen.getByLabelText('Username'), 'alice');
     await user.type(screen.getByLabelText('Password'), 'password123');
     await user.click(screen.getByRole('button', { name: 'Sign in' }));
     expect(await screen.findByRole('heading', { name: 'Welcome, alice' })).toBeInTheDocument();
+    expect(await screen.findByText('No strategic data available for this period.')).toBeInTheDocument();
+    expect(await screen.findByRole('button', { name: 'Review performance' })).toBeInTheDocument();
+    expect(get).toHaveBeenCalledTimes(2);
+    expect(get).toHaveBeenCalledWith('/dashboard/strategic-metrics');
+    expect(get).toHaveBeenCalledWith('/ai/recommendations', { params: { context_tab: 'strategic' } });
     expect(sessionStorage.getItem(TOKEN_KEY)).toBe('signed');
     await user.click(screen.getByRole('button', { name: 'Sign out' }));
     expect(await screen.findByRole('heading', { name: 'Sign in' })).toBeInTheDocument();

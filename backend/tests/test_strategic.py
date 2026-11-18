@@ -2,55 +2,27 @@
 import csv
 import datetime
 import io
-import os
 from decimal import Decimal
 
 import pytest
-from alembic import command
-from alembic.config import Config
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import make_url
+from sqlalchemy import text
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.orm import sessionmaker
 
-from app.core.config import settings
-from app.core.database import get_db
-from app.main import app
 from app.models.strategic import StrategicBudget, StrategicMetric
 from app.services.strategic import dashboard
 
 
 @pytest.fixture()
-def context():
-    """Migrate and reset only a separately configured test database."""
-    url = make_url(os.environ["TEST_DATABASE_URL"])
-    if not url.drivername.startswith("postgresql") or not url.database or "test" not in url.database.lower() or url == settings.application_url:
-        raise RuntimeError("TEST_DATABASE_URL must name a separate PostgreSQL test database")
-    config = Config("alembic.ini")
-    config.attributes["database_url"] = url
-    command.upgrade(config, "head")
-    engine = create_engine(url)
-    with engine.begin() as connection:
-        connection.execute(text("TRUNCATE strategic_metrics, strategic_budgets, auth_sessions, users RESTART IDENTITY CASCADE"))
-    factory = sessionmaker(bind=engine, expire_on_commit=False)
-
-    def override():
-        """Supply sessions backed by the isolated database."""
-        with factory() as db:
-            yield db
-
-    app.dependency_overrides[get_db] = override
-    with TestClient(app) as client:
-        yield client, factory
-    app.dependency_overrides.clear()
-    engine.dispose()
+def context(isolated_context):
+    """Use the per-test isolated PostgreSQL schema."""
+    return isolated_context
 
 
 def login(client):
     """Create and authenticate a test account."""
     assert client.post('/api/v1/auth/register', json={'username': 'alice', 'email': 'alice@example.com', 'password': 'password123'}).status_code == 201
     response = client.post('/api/v1/auth/login', json={'username': 'alice', 'password': 'password123'})
+    assert response.status_code == 200
     return {'Authorization': 'Bearer ' + response.json()['access_token']}
 
 
@@ -91,9 +63,11 @@ def test_authenticated_persistence_and_exports(context):
     assert data['insights'][0]['insight'] == '@review, now'
     assert data['budgets'][0]['actual'] == '175.00'
     exported = client.get(endpoint + '/export?format=json', headers=headers)
+    assert exported.status_code == 200
     assert exported.json() == data
     assert 'attachment' in exported.headers['content-disposition']
     exported = client.get(endpoint + '/export?format=csv', headers=headers)
+    assert exported.status_code == 200
     rows = list(csv.DictReader(io.StringIO(exported.text)))
     assert rows[0]['name'] == "'=Risk" and rows[0]['insight'] == "'@review, now"
     assert rows[1]['budget'] == '200.00' and rows[1]['actual'] == '175.00'
@@ -108,7 +82,9 @@ def test_authentication_empty_and_revocation(context):
         assert client.get(path).status_code == 401
         assert client.get(path, headers={'Authorization': 'Bearer forged'}).status_code == 401
     headers = login(client)
-    assert client.get(endpoint, headers=headers).json()['metrics'] == []
+    response = client.get(endpoint, headers=headers)
+    assert response.status_code == 200
+    assert response.json()['metrics'] == []
     assert client.post('/api/v1/auth/logout', headers=headers).status_code == 204
     assert client.get(endpoint, headers=headers).status_code == 401
     assert client.get(endpoint + '/export', headers=headers).status_code == 401
@@ -130,3 +106,29 @@ def test_database_constraints(context):
         db.add(StrategicBudget(name='IT', month=datetime.date(2025, 1, 2), budget=1, actual=1))
         with pytest.raises(IntegrityError): db.commit()
         db.rollback()
+
+
+@pytest.mark.parametrize('table,column', [('strategic_metrics', 'metric_value'), ('strategic_budgets', 'actual')])
+def test_not_null_violation_rolls_back_strategic_transaction(context, table, column):
+    """Reject missing required values and preserve only previously committed data."""
+    _, factory = context
+    with factory() as db:
+        date = datetime.date(2025, 1, 1)
+        db.add(StrategicMetric(category='risk', metric_name='Committed', metric_value=1, recorded_date=date))
+        db.commit()
+        db.add(StrategicMetric(category='risk', metric_name='Pending', metric_value=2, recorded_date=date))
+        db.flush()
+        if table == 'strategic_metrics':
+            invalid = StrategicMetric(category='risk', metric_name='Invalid', metric_value=None, recorded_date=date)
+        else:
+            invalid = StrategicBudget(name='Invalid', month=date, budget=1, actual=None)
+        db.add(invalid)
+        with pytest.raises(IntegrityError) as error:
+            db.flush()
+        assert error.value.orig.sqlstate == '23502'
+        assert error.value.orig.diag.column_name == column
+        db.rollback()
+
+        names = db.execute(text('SELECT metric_name FROM strategic_metrics ORDER BY metric_name')).scalars().all()
+        assert names == ['Committed']
+        assert db.execute(text('SELECT count(*) FROM strategic_budgets')).scalar_one() == 0

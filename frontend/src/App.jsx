@@ -38,15 +38,41 @@ function Account() {
       {error && <p role="alert" className="error">{error}</p>}
       <button type="button" disabled={pending} onClick={signOut}>{pending ? 'Signing out…' : 'Sign out'}</button>
       <nav aria-label="Dashboard" className="dashboard-nav">
-        <Link to="/dashboard/strategic" aria-current={['/account', '/dashboard/strategic'].includes(location.pathname) ? 'page' : undefined}>Strategic Command</Link>
-        <Link to="/dashboard/executive-summary" aria-current={location.pathname === '/dashboard/executive-summary' ? 'page' : undefined}>Executive Summary</Link>
-        <Link to="/dashboard/business" aria-current={location.pathname === '/dashboard/business' ? 'page' : undefined}>Business Impact</Link>
-        <Link to="/dashboard/operations" aria-current={location.pathname === '/dashboard/operations' ? 'page' : undefined}>Operations</Link>
-        <Link to="/dashboard/governance" aria-current={location.pathname === '/dashboard/governance' ? 'page' : undefined}>Risk &amp; Governance</Link>
-        <Link to="/dashboard/innovation" aria-current={location.pathname === '/dashboard/innovation' ? 'page' : undefined}>Innovation</Link>
-        <Link to="/dashboard/partnerships" aria-current={location.pathname === '/dashboard/partnerships' ? 'page' : undefined}>Partnerships</Link>
+        <Link to="/dashboard/strategic" aria-current={['/account', '/dashboard/strategic'].includes(location.pathname) ? 'page' : undefined}>
+          Strategic Command
+        </Link>
+        <Link to="/dashboard/executive-summary" aria-current={location.pathname === '/dashboard/executive-summary' ? 'page' : undefined}>
+          Executive Summary
+        </Link>
+        <Link to="/dashboard/business" aria-current={location.pathname === '/dashboard/business' ? 'page' : undefined}>
+          Business Impact
+        </Link>
+        <Link to="/dashboard/operations" aria-current={location.pathname === '/dashboard/operations' ? 'page' : undefined}>
+          Operations
+        </Link>
+        <Link to="/dashboard/governance" aria-current={location.pathname === '/dashboard/governance' ? 'page' : undefined}>
+          Risk &amp; Governance
+        </Link>
+        <Link to="/dashboard/innovation" aria-current={location.pathname === '/dashboard/innovation' ? 'page' : undefined}>
+          Innovation
+        </Link>
+        <Link to="/dashboard/partnerships" aria-current={location.pathname === '/dashboard/partnerships' ? 'page' : undefined}>
+          Partnerships
+        </Link>
       </nav>
-      {location.pathname === '/dashboard/executive-summary' ? <Regional /> : location.pathname === '/dashboard/business' ? <Business /> : location.pathname === '/dashboard/operations' ? <Operations /> : location.pathname === '/dashboard/governance' ? <Governance /> : location.pathname === '/dashboard/innovation' ? <Innovation /> : location.pathname === '/dashboard/partnerships' ? <Partnerships onSummarize={() => setAssistantLaunch({ tab: 'partnerships', query: 'Summarize partnership performance for contract review and negotiation preparation.' })} /> : <Strategic />}
+      {location.pathname === '/dashboard/executive-summary' ? <Regional />
+        : location.pathname === '/dashboard/business' ? <Business />
+          : location.pathname === '/dashboard/operations' ? <Operations />
+            : location.pathname === '/dashboard/governance' ? <Governance />
+              : location.pathname === '/dashboard/innovation' ? <Innovation />
+                : location.pathname === '/dashboard/partnerships' ? (
+                  <Partnerships
+                    onSummarize={() => setAssistantLaunch({
+                      tab: 'partnerships',
+                      query: 'Summarize partnership performance for contract review and negotiation preparation.',
+                    })}
+                  />
+                ) : <Strategic />}
       <Assistant tab={tab} launch={assistantLaunch} onLaunchHandled={() => setAssistantLaunch(null)} />
     </section>
   );

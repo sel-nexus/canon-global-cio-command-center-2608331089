@@ -59,7 +59,17 @@ def context_data(db: Session, tab: Tab) -> list[dict]:
 
 
 def chat(db: Session, request: ChatRequest) -> ChatResponse:
-    """Call an explicitly enabled OpenAI-compatible endpoint and validate output."""
+    """Return an explicitly synthetic example or validated provider output."""
+    if settings.ai_mock_enabled:
+        if any(secret and secret in request.query for secret in (settings.ai_api_key, settings.jwt_secret, settings.database_url)) or re.search(r'(?i)\b(bearer\s+\S+|password\s*[:=]|api[_ -]?key\s*[:=]|secret\s*[:=])', request.query):
+            raise HTTPException(status_code=422, detail='Do not include credentials in assistant questions.')
+        return ChatResponse(
+            source='mock',
+            narrative='MOCK / synthetic example: this is not an analysis of your dashboard data.',
+            actions=['MOCK / synthetic example action: review verified source data separately.'],
+            confidence='MOCK / synthetic: not assessed',
+            limitations=['MOCK / synthetic output is fixed, does not use dashboard data, and must not be used for decisions.', 'No external AI provider was contacted.'],
+        )
     try:
         endpoint = urlsplit(settings.ai_endpoint)
     except ValueError:
@@ -97,4 +107,4 @@ def chat(db: Session, request: ChatRequest) -> ChatResponse:
         limitations.append('No persisted records were available for this tab.')
     if analysis.confidence is None:
         limitations.append('Provider did not supply a confidence rating.')
-    return ChatResponse(**analysis.model_dump(), limitations=limitations)
+    return ChatResponse(**analysis.model_dump(), source='provider', limitations=limitations)

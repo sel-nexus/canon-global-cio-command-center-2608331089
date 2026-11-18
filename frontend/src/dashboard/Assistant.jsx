@@ -72,27 +72,48 @@ export default function Assistant({ tab, launch, onLaunchHandled }) {
       {tab === 'strategic' && <section aria-label="Suggested assistant questions">
         <h2>Suggested questions</h2>
         {promptError && <p className="muted">{promptError}</p>}
-        {prompts.map((item) => <button key={item.query} className="assistant-prompt" type="button" onClick={() => ask(item.query, item.context_tab)}>{item.label}</button>)}
+        {prompts.map((item) => (
+          <button key={item.query} className="assistant-prompt" type="button" onClick={() => ask(item.query, item.context_tab)}>
+            {item.label}
+          </button>
+        ))}
       </section>}
       <button ref={trigger} type="button" className="assistant-launch" onClick={() => setOpen(true)}>Executive assistant</button>
       {open && <div className="assistant-overlay" onMouseDown={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
         <aside ref={dialog} className="assistant-drawer" role="dialog" aria-modal="true" aria-labelledby="assistant-title">
           <button type="button" className="assistant-close" onClick={() => setOpen(false)}>Close assistant</button>
           <h2 id="assistant-title">Executive assistant</h2>
-          <p className="muted">Context: {tab}. Questions and limited dashboard data are sent to the configured provider. Do not enter personal information or credentials.</p>
+          <p className="muted">
+            Context: {tab}. In provider mode, questions and limited dashboard data are sent to the configured provider.
+            Do not enter personal information or credentials.
+          </p>
           <h3>Suggested follow-up</h3>
           {promptError && <p className="muted">{promptError}</p>}
-          {prompts.map((item) => <button key={item.query} type="button" className="assistant-prompt" disabled={pending} onClick={() => ask(item.query, item.context_tab)}>{item.label}</button>)}
+          {prompts.map((item) => (
+            <button
+              key={item.query} type="button" className="assistant-prompt" disabled={pending}
+              onClick={() => ask(item.query, item.context_tab)}
+            >
+              {item.label}
+            </button>
+          ))}
           <form onSubmit={(event) => { event.preventDefault(); ask(query); }}>
             <label htmlFor="assistant-query">Your question</label>
             <textarea id="assistant-query" value={query} onChange={(event) => setQuery(event.target.value)} maxLength={1000} required rows={4} />
             <button type="submit" disabled={pending || !query.trim()}>{pending ? 'Analyzing…' : 'Ask assistant'}</button>
           </form>
-          {pending && <p role="status">Analyzing available evidence…</p>}
+          {pending && <p role="status">Waiting for assistant response…</p>}
           {error && <p role="alert" className="error">{error}</p>}
           {result && <div aria-live="polite">
+            <p><strong>
+              {result.source === 'mock' ? 'MOCK / synthetic output — not an analysis of dashboard data.'
+                : result.source === 'provider' ? 'Source: AI provider' : 'Source: unknown'}
+            </strong></p>
             <h3>Analysis</h3><p>{result.narrative}</p>
-            <h3>Suggested actions</h3>{result.actions.length ? <ul>{result.actions.map((action, index) => <li key={index}>{action}</li>)}</ul> : <p>No actions supplied.</p>}
+            <h3>Suggested actions</h3>
+            {result.actions.length
+              ? <ul>{result.actions.map((action, index) => <li key={index}>{action}</li>)}</ul>
+              : <p>No actions supplied.</p>}
             <p>Confidence: {result.confidence ?? 'Not supplied'}</p>
             <h3>Limitations</h3><ul>{result.limitations.map((item) => <li key={item}>{item}</li>)}</ul>
           </div>}
@@ -102,4 +123,8 @@ export default function Assistant({ tab, launch, onLaunchHandled }) {
   );
 }
 
-Assistant.propTypes = { tab: PropTypes.string.isRequired, launch: PropTypes.shape({ query: PropTypes.string, tab: PropTypes.string }), onLaunchHandled: PropTypes.func.isRequired };
+Assistant.propTypes = {
+  tab: PropTypes.string.isRequired,
+  launch: PropTypes.shape({ query: PropTypes.string, tab: PropTypes.string }),
+  onLaunchHandled: PropTypes.func.isRequired,
+};
